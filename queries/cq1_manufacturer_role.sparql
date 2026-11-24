@@ -1,0 +1,9 @@
+PREFIX : <http://leurn.co/ontologies/precursor-triage#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?org ?label WHERE {
+  ?org a :Organization ;
+       :bearsRole ?role .
+  ?role a :ManufacturerRole .
+  OPTIONAL { ?org rdfs:label ?label }
+}

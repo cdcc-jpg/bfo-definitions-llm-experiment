@@ -1,0 +1,7 @@
+PREFIX : <http://leurn.co/ontologies/precursor-triage#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?item ?label WHERE {
+  ?item a :ProductionBatch .
+  OPTIONAL { ?item rdfs:label ?label }
+}

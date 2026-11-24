@@ -1,0 +1,9 @@
+SYSTEM PROMPT (Conservative Abstain / Matches-First Mode):
+You are an ontology QA evaluator inspecting an RDF/OWL Turtle file. Evaluate strictly against the given ontology definitions, axioms, and facts. Return ONLY valid JSON with two keys: {"matches": ["EntityLocalId", ...], "reason": "one short sentence"}. Use bare entity local IDs without colons (for example "Org_Vanguard_Works" or "Lot_FX204"). If the provided knowledge does not deterministically identify any qualifying entity, return {"matches": [], "reason": "..."}.
+
+COMPETENCY QUESTIONS:
+- CQ1: List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.
+- CQ2: List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.
+- CQ3: List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.
+
+(In Condition 1B masked-ID ablation, target classes become :CLASS_02, :CLASS_06, and :CLASS_11.)

@@ -1,0 +1,1677 @@
+{
+  "model": "Frontier Gemini Reasoning Model (blind zero-tool harness, 3 runs/CQ)",
+  "modes": {
+    "rag": {
+      "1B_bare_masked_ids": {
+        "total_exact": 0,
+        "total_runs": 9,
+        "accuracy_pct": 0.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": ":CLASS_02 has only an opaque label (\"Class 02\") and a subclass axiom to :CLASS_01, with no definitions or OWL restrictions linking it to :ChemicalSynthesis, :TitleTransfer, or :CargoTransport. Because :Role_H1, :Role_V1, and :Role_M1 are only typed as :CLASS_01, none of the organizations can be classified under :CLASS_02 from the provided ontology."
+              },
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": ":CLASS_02 is declared only as an opaque subclass of :CLASS_01 with no definition, OWL axiom, or restriction distinguishing it from siblings :CLASS_03 and :CLASS_04. Because :Role_H1, :Role_V1, and :Role_M1 are only typed as :CLASS_01, none of the three organizations can be classified under :CLASS_02 from the provided ontology and facts."
+              },
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "No organization can be classified under :CLASS_02 because :CLASS_02 is declared only as an opaque subclass of :CLASS_01 with no definitions, OWL axioms, or distinguishing constraints separating it from siblings :CLASS_03 and :CLASS_04. Although the three organizations bear :CLASS_01 roles realized in :TitleTransfer, :ChemicalSynthesis, and :CargoTransport, nothing in the graph entails or specifies which role type corresponds to :CLASS_02."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "In the provided ontology, :CLASS_06, :CLASS_07, and :CLASS_08 are declared only as opaquely labeled subclasses of :CLASS_05 with no definitions, OWL axioms, or differentiating property constraints. Because :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 are typed solely as :CLASS_05, none can be logically classified as :CLASS_06."
+              },
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology declares :CLASS_06 only as an opaque subclass of :CLASS_05 with no definition (obo:IAO_0000115), descriptive label, or OWL axioms distinguishing it from siblings :CLASS_07 and :CLASS_08. Because :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 are asserted only as :CLASS_05 with no semantic or logical criteria mapping them to :CLASS_06, none can be classified under :CLASS_06."
+              },
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology defines :CLASS_06 solely as an opaque subclass of :CLASS_05 with no distinguishing label, IAO definition, or OWL equivalence/restriction axiom, making it indistinguishable from :CLASS_07 and :CLASS_08. Because :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 are only asserted as :CLASS_05 and no property domain, range, or axiom entails membership in :CLASS_06, none can be validly classified as :CLASS_06."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "In the provided ontology, :CLASS_11 is declared only as an undifferentiated subclass of :CLASS_09 with an opaque label and no definitions, OWL axioms, or property restrictions distinguishing it from :CLASS_10 and :CLASS_12. Consequently, neither Record_88A nor Record_44B can be validly classified as an instance of :CLASS_11 from the given graph."
+              },
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The provided ontology defines :CLASS_11 only as an opaque subclass of :CLASS_09 with no textual definition, descriptive label, or OWL axioms distinguishing it from siblings :CLASS_10 and :CLASS_12. Because :Record_88A and :Record_44B are asserted only as instances of :CLASS_09, neither can be validly classified under :CLASS_11 from the given graph."
+              },
+              {
+                "mode": "rag",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology defines :CLASS_11 only as an opaque rdfs:subClassOf :CLASS_09 with no definitions, descriptive labels, or OWL axioms distinguishing it from siblings :CLASS_10 and :CLASS_12. Because :Record_88A and :Record_44B are only asserted as instances of :CLASS_09, neither can be logically classified into :CLASS_11."
+              }
+            ]
+          }
+        }
+      },
+      "1A_bare_labels_only": {
+        "total_exact": 9,
+        "total_runs": 9,
+        "accuracy_pct": 100.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (ChemicalSynthesis, producing Lot_FX204), matching ManufacturerRole. By contrast, Org_Helios_Supply's role is realized in TitleTransfer (BrokerRole) and Org_Meridian_Freight's role is realized in CargoTransport (CarrierRole)."
+              },
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis process producing Lot_FX204), matching ManufacturerRole. By contrast, Org_Helios_Supply bears Role_H1 realized in TitleTransfer (BrokerRole) and Org_Meridian_Freight bears Role_M1 realized in CargoTransport (CarrierRole)."
+              },
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis process that outputs Lot_FX204), fitting ManufacturerRole. By contrast, Org_Helios_Supply bears Role_H1 realized in TitleTransfer (BrokerRole) and Org_Meridian_Freight bears Role_M1 realized in CargoTransport (CarrierRole)."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is the direct material output (:outputOf) of the chemical synthesis process Act_404 (:ChemicalSynthesis), fitting :ProductionBatch. By contrast, Unit_FX204_A is sampled from Lot_FX204 (fitting :ForensicSpecimen) and Batch_Lab09 groups specimens via :groupsSpecimen (fitting :AssayRunTray despite 'Batch' in its name)."
+              },
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is the direct output of Act_404, a ChemicalSynthesis process ('Reactor Synthesis'), fitting ProductionBatch. By contrast, Unit_FX204_A is sampled from Lot_FX204 (ForensicSpecimen) and Batch_Lab09 merely groups specimens (AssayRunTray)."
+              },
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 fits ProductionBatch because it is the direct outputOf a ChemicalSynthesis process (Act_404). In contrast, Unit_FX204_A is sampledFrom Lot_FX204 (ForensicSpecimen), and Batch_Lab09 groupsSpecimen Unit_FX204_A (AssayRunTray despite its 'Batch' label)."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is the output of Assay_77 (a RamanAssay) and records a measured spectral peak composition, matching SpectroscopyDatum. Record_88A is instead submitted by Org_Helios_Supply (whose role is realized in TitleTransfer) with reported origin and composition, fitting ShippingManifest rather than SpectroscopyDatum."
+              },
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is the output of Assay_77 (a RamanAssay, 'Port Raman Scan') and records a measured peak composition, fitting SpectroscopyDatum. By contrast, Record_88A is a reported origin/composition declaration submitted by Org_Helios_Supply (whose role is realized in a TitleTransfer), fitting ShippingManifest rather than SpectroscopyDatum."
+              },
+              {
+                "mode": "rag",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is the output of Assay_77 (a RamanAssay / Port Raman Scan) recording a measured spectral peak composition, so it fits SpectroscopyDatum. Record_88A is instead submitted by Org_Helios_Supply (whose role is realized in a TitleTransfer) as a declared composition and origin record, fitting ShippingManifest rather than SpectroscopyDatum."
+              }
+            ]
+          }
+        }
+      },
+      "2A_sloppy_defs_only": {
+        "total_exact": 3,
+        "total_runs": 9,
+        "accuracy_pct": 33.3,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works",
+                  "Org_Helios_Supply"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Org_Helios_Supply"
+                ],
+                "reason": "Because :ManufacturerRole is broadly defined as a supply chain role of an organization that provides, sources, or supplies chemical materials (e.g., factories or wholesale vendors) with no disjointness from :BrokerRole, both Org_Vanguard_Works (Role_V1 realized in chemical synthesis Act_404 outputting Lot_FX204) and Org_Helios_Supply (Role_H1 realized in title-transfer/brokered invoice Act_901 as a chemical supplier/vendor and reported origin) fit :ManufacturerRole. Org_Meridian_Freight only performs cargo transport (Act_550), fitting :CarrierRole instead."
+              },
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works",
+                  "Org_Helios_Supply"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Org_Helios_Supply"
+                ],
+                "reason": "Because ManufacturerRole is non-disjoint with BrokerRole and defined broadly as an organization that 'provides, sources, or supplies chemical materials into the supply chain (e.g., factories or wholesale vendors)', both Org_Vanguard_Works (Role_V1 realized in ChemicalSynthesis Act_404 producing Lot_FX204) and Org_Helios_Supply (Helios Chemical Supply Ltd, bearing Role_H1 realized in TitleTransfer Act_901 and reporting origin: Helios Supply on Record_88A) fit ManufacturerRole. Org_Meridian_Freight does not fit because Role_M1 is realized only in CargoTransport Act_550, matching CarrierRole."
+              },
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works",
+                  "Org_Helios_Supply"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Org_Helios_Supply"
+                ],
+                "reason": "Because ManufacturerRole is broadly defined as supplying, sourcing, or providing chemical materials (including factories or wholesale vendors) without disjointness from BrokerRole, both Org_Vanguard_Works (which synthesizes Lot_FX204 in Act_404) and Org_Helios_Supply (a chemical supplier realizing Role_H1 in title-transfer/brokered invoice Act_901 and claiming origin in Record_88A) fit. Org_Meridian_Freight only conducts cargo transport (Act_550) and fits CarrierRole instead."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204",
+                  "Batch_Lab09"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Batch_Lab09"
+                ],
+                "reason": "Because ProductionBatch is defined as chemical items grouped under one batch ID in manufacturing or laboratory operations (explicitly including synthesis lots and assay trays) with no disjointness or OWL restrictions excluding lab trays, both Lot_FX204 (synthesis lot output of ChemicalSynthesis Act_404) and Batch_Lab09 (laboratory batch grouping specimen Unit_FX204_A) fit. Unit_FX204_A is a single sampled vial (ForensicSpecimen) rather than a grouped batch."
+              },
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204",
+                  "Batch_Lab09"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Batch_Lab09"
+                ],
+                "reason": "The ontology defines ProductionBatch broadly as chemical items grouped under one batch ID in manufacturing or laboratory operations (explicitly citing synthesis lots or assay trays) with no disjointness axioms separating it from AssayRunTray. Therefore, both Lot_FX204 (drums output of ChemicalSynthesis Act_404) and Batch_Lab09 (a lab batch grouping specimen Unit_FX204_A) fit ProductionBatch, whereas Unit_FX204_A is a single sampled ForensicSpecimen."
+              },
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204",
+                  "Batch_Lab09"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Batch_Lab09"
+                ],
+                "reason": "The provided definition of :ProductionBatch covers chemical items grouped under one batch ID in manufacturing or laboratory operations (explicitly including both synthesis lots and assay trays), with no disjointness or OWL restriction axioms excluding laboratory batches. Therefore, both Lot_FX204 (drums output of ChemicalSynthesis Act_404) and Batch_Lab09 (a laboratory batch grouping specimen Unit_FX204_A) fit :ProductionBatch, whereas Unit_FX204_A is a single sampled vial (:ForensicSpecimen)."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is the output of Assay_77 (a RamanAssay / Port Raman Scan) containing measured peak composition data, fitting SpectroscopyDatum. Record_88A is submitted by broker Org_Helios_Supply with reported chemical identity, purity, and origin, fitting ShippingManifest rather than SpectroscopyDatum."
+              },
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is the output of Assay_77 (a RamanAssay) and records measured peak chemical composition, directly fitting SpectroscopyDatum. By contrast, Record_88A is submitted by Org_Helios_Supply with reported identity, purity, and origin rather than assay data, fitting ShippingManifest instead."
+              },
+              {
+                "mode": "rag",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is the output of Assay_77 (a RamanAssay) recording measured peak composition, directly fitting SpectroscopyDatum as technical composition data from spectroscopy. Record_88A is a supplier-submitted declaration of reported chemical identity, purity, and origin from Org_Helios_Supply (whose role is realized in a TitleTransfer), fitting the sibling class ShippingManifest rather than SpectroscopyDatum."
+              }
+            ]
+          }
+        }
+      },
+      "2B_strict_defs_only": {
+        "total_exact": 9,
+        "total_runs": 9,
+        "accuracy_pct": 100.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis process producing the production batch Lot_FX204), matching ManufacturerRole. By contrast, Org_Helios_Supply's role is realized in TitleTransfer (BrokerRole) and Org_Meridian_Freight's role is realized in CargoTransport (CarrierRole)."
+              },
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis process producing the batch Lot_FX204), matching the definition of ManufacturerRole. Org_Helios_Supply and Org_Meridian_Freight instead bear roles realized in TitleTransfer (BrokerRole) and CargoTransport (CarrierRole), respectively."
+              },
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis process producing the ProductionBatch Lot_FX204), matching the definition of ManufacturerRole. By contrast, Org_Helios_Supply bears a role realized in TitleTransfer (BrokerRole) and Org_Meridian_Freight bears a role realized in CargoTransport (CarrierRole)."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is the only inspected material linked via outputOf to a ChemicalSynthesis process (Act_404), matching the definition of ProductionBatch. Unit_FX204_A is sampledFrom Lot_FX204 (ForensicSpecimen) and Batch_Lab09 groupsSpecimen Unit_FX204_A (AssayRunTray)."
+              },
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is the only inspected material linked via :outputOf to a :ChemicalSynthesis process (:Act_404), matching the definition of :ProductionBatch. By contrast, Unit_FX204_A is :sampledFrom Lot_FX204 (:ForensicSpecimen) and Batch_Lab09 :groupsSpecimen Unit_FX204_A (:AssayRunTray)."
+              },
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is the only inspected material linked via outputOf to a ChemicalSynthesis process (Act_404), matching the definition of ProductionBatch. Unit_FX204_A is sampledFrom Lot_FX204 (ForensicSpecimen), and Batch_Lab09 groupsSpecimen Unit_FX204_A (AssayRunTray) despite its label."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord generated as the :outputOf Assay_77 (a :RamanAssay) recording measured peak composition, matching :SpectroscopyDatum. Record_88A is submitted by Org_Helios_Supply declaring cargo composition and origin, which fits :ShippingManifest instead."
+              },
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord produced as the outputOf Assay_77 (a RamanAssay) recording a measured composition, matching the definition of SpectroscopyDatum. By contrast, Record_88A is submittedBy Org_Helios_Supply to declare cargo identity and origin, fitting ShippingManifest instead."
+              },
+              {
+                "mode": "rag",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord linked via :outputOf to :Assay_77 (a :RamanAssay) with a measured peak composition, matching the definition of :SpectroscopyDatum. By contrast, Record_88A is submitted by :Org_Helios_Supply asserting declared cargo identity and origin, matching :ShippingManifest."
+              }
+            ]
+          }
+        }
+      },
+      "3_reasoner_plus_strict": {
+        "total_exact": 9,
+        "total_runs": 9,
+        "accuracy_pct": 100.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in the ChemicalSynthesis process Act_404 and therefore satisfies the ManufacturerRole equivalent-class axiom (and is materialized as a ManufacturerRole). By contrast, Org_Helios_Supply bears BrokerRole (via TitleTransfer Act_901) and Org_Meridian_Freight bears CarrierRole (via CargoTransport Act_550), both disjoint with ManufacturerRole."
+              },
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis process) and is classified as a ManufacturerRole. Org_Helios_Supply and Org_Meridian_Freight bear Role_H1 (BrokerRole) and Role_M1 (CarrierRole), respectively, both of which are disjoint with ManufacturerRole."
+              },
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in ChemicalSynthesis process Act_404 and thus classified as ManufacturerRole. By contrast, Org_Helios_Supply bears BrokerRole (TitleTransfer Act_901) and Org_Meridian_Freight bears CarrierRole (CargoTransport Act_550)."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is an InspectedMaterial produced as the outputOf Act_404 (a ChemicalSynthesis), satisfying the equivalentClass axiom for ProductionBatch (as also materialized by the reasoner). Unit_FX204_A is a disjoint ForensicSpecimen sampled from Lot_FX204, and Batch_Lab09 is a disjoint AssayRunTray grouping that specimen."
+              },
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is an InspectedMaterial that is the outputOf Act_404 (a ChemicalSynthesis), satisfying the equivalentClass definition of ProductionBatch and confirmed by the reasoner. Unit_FX204_A (ForensicSpecimen) and Batch_Lab09 (AssayRunTray) belong to classes disjoint with ProductionBatch."
+              },
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is an InspectedMaterial produced via outputOf Act_404 (a ChemicalSynthesis), satisfying the equivalence axiom and reasoner-materialized type for ProductionBatch. Unit_FX204_A (ForensicSpecimen, sampledFrom Lot_FX204) and Batch_Lab09 (AssayRunTray, groupsSpecimen Unit_FX204_A) belong to sibling classes disjoint with ProductionBatch."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord that is outputOf Assay_77 (a RamanAssay), satisfying the owl:equivalentClass axiom for SpectroscopyDatum (and materialized as such). Record_88A is submittedBy Org_Helios_Supply (an Organization), classifying it as a ShippingManifest, which is disjoint with SpectroscopyDatum."
+              },
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord linked via :outputOf to :Assay_77 (a :RamanAssay), satisfying the owl:equivalentClass axiom for :SpectroscopyDatum (and materialized as such). Record_88A is :submittedBy an :Organization, making it a :ShippingManifest, which is disjoint with :SpectroscopyDatum."
+              },
+              {
+                "mode": "rag",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord linked via :outputOf to :Assay_77 (a :RamanAssay), satisfying the equivalence axiom and materialized type for :SpectroscopyDatum. Record_88A is :submittedBy an :Organization, classifying it as :ShippingManifest, which is disjoint with :SpectroscopyDatum."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "abstain": {
+      "1B_bare_masked_ids": {
+        "total_exact": 0,
+        "total_runs": 9,
+        "accuracy_pct": 0.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": ":CLASS_02 is defined only as an opaque subclass of :CLASS_01 with no annotations, definitions, or logical axioms linking it to any specific process type, and none of the organizations' roles are asserted as instances of :CLASS_02."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "CLASS_02 is only declared as an opaque subclass of CLASS_01 with no OWL axioms, definitions, or ABox type assertions distinguishing it from CLASS_03 or CLASS_04, so no organization's borne role can be deterministically classified as CLASS_02."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology defines :CLASS_02 only as an opaque subclass of :CLASS_01 without any axioms, definitions, or assertions distinguishing it from :CLASS_03 and :CLASS_04 or linking any borne role to it."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology declares :CLASS_06 only as an uncharacterized subclass of :CLASS_05 with no defining axioms, annotations, or ABox assertions that deterministically classify any inspected material as :CLASS_06."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": ":CLASS_06 is declared only as an opaque subclass of :CLASS_05 with no definitions, logical axioms, property constraints, or instance assertions that deterministically classify :Lot_FX204, :Unit_FX204_A, or :Batch_Lab09 into it."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology defines :CLASS_06 only as an opaque subclass of :CLASS_05 with no definitions, logical axioms, or distinguishing property restrictions, so none of the inspected materials can be deterministically classified as :CLASS_06."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "Class :CLASS_11 is declared only as an opaque subclass of :CLASS_09 with no definitions, equivalence axioms, or distinguishing restrictions, and neither :Record_88A nor :Record_44B is asserted as a :CLASS_11 instance, so no qualifying record can be deterministically identified."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "CLASS_11 is only declared as an opaque subclass of CLASS_09 with no definitions, axioms, or property constraints, and neither Record_88A nor Record_44B is asserted as an instance of CLASS_11."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1B_bare_masked_ids",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "CLASS_11 has no defining axioms, natural-language definitions, or direct assertions distinguishing it from sibling subclasses of CLASS_09, so neither Record_88A nor Record_44B can be deterministically identified as CLASS_11."
+              }
+            ]
+          }
+        }
+      },
+      "1A_bare_labels_only": {
+        "total_exact": 0,
+        "total_runs": 9,
+        "accuracy_pct": 0.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology declares :ManufacturerRole only as a bare subclass of :SupplyChainRole without any definition, sufficient OWL axiom, or explicit role type assertion, so no organization's borne role is deterministically qualified as :ManufacturerRole."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology declares ManufacturerRole only as a primitive subclass of SupplyChainRole with no definitions, axioms, or type assertions linking any organization's borne role to ManufacturerRole, so no entity deterministically qualifies."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "ManufacturerRole is declared only as an undefined subclass of SupplyChainRole with no definitions, formal OWL axioms, or asserted role instances linking it to ChemicalSynthesis, so no organization can be deterministically identified."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology defines :ProductionBatch solely as a subclass of :InspectedMaterial without any axioms, definitions, or membership criteria, and none of the three candidates is asserted to be a :ProductionBatch, so no entity is deterministically identified."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology provides neither formal OWL axioms nor textual definitions specifying membership criteria for ProductionBatch, and none of the candidate materials is asserted to be an instance of ProductionBatch."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "None of the three materials is asserted as :ProductionBatch, and the ontology provides no definitions or OWL axioms specifying sufficient conditions to deterministically infer :ProductionBatch membership."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "The ontology declares SpectroscopyDatum only as a primitive subclass of InspectionRecord with no definitions or axioms linking RamanAssay outputs to it, so neither Record_88A nor Record_44B is deterministically identified as qualifying."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "Neither Record_88A nor Record_44B is asserted as a SpectroscopyDatum, and the ontology lacks definitions or axioms linking RamanAssay outputs to deterministically entail SpectroscopyDatum membership."
+              },
+              {
+                "mode": "abstain",
+                "cond": "1A_bare_labels_only",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [],
+                "exact_match": false,
+                "false_positives": [],
+                "reason": "Neither Record_88A nor Record_44B is asserted as a SpectroscopyDatum, and the ontology provides no definitions or OWL axioms linking InspectionRecord, outputOf, or RamanAssay to SpectroscopyDatum to deterministically establish membership."
+              }
+            ]
+          }
+        }
+      },
+      "2A_sloppy_defs_only": {
+        "total_exact": 0,
+        "total_runs": 9,
+        "accuracy_pct": 0.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Helios_Supply",
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Org_Helios_Supply"
+                ],
+                "reason": "Because ManufacturerRole is defined broadly as providing, sourcing, or supplying chemical materials (including factories or wholesale vendors) without disjointness from BrokerRole, both Org_Vanguard_Works (synthesizing Lot_FX204 via Act_404) and Org_Helios_Supply (chemical supplier executing title transfer Act_901 and declaring origin in Record_88A) qualify."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works",
+                  "Org_Helios_Supply"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Org_Helios_Supply"
+                ],
+                "reason": "Under the ontology's broad, non-disjoint definition of ManufacturerRole covering organizations that provide, source, or supply chemical materials (including factories and wholesale vendors), both Org_Vanguard_Works (synthesizing Lot_FX204 via Act_404) and Org_Helios_Supply (supplying via TitleTransfer Act_901 and citing origin in Record_88A) qualify."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Helios_Supply",
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Org_Helios_Supply"
+                ],
+                "reason": "Because ManufacturerRole is defined broadly as a supply chain role of an organization that provides, sources, or supplies chemical materials into the supply chain (e.g., factories or wholesale vendors) with no synthesis axiom or disjointness from BrokerRole, both Org_Vanguard_Works (reactor synthesis of Lot_FX204) and Org_Helios_Supply (chemical supplier executing a brokered title transfer and stating origin on Record_88A) qualify, whereas Org_Meridian_Freight only performs cargo transport."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204",
+                  "Batch_Lab09"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Batch_Lab09"
+                ],
+                "reason": "Because ProductionBatch has no disjointness or synthesis-only axioms and is defined to cover chemical items grouped under one batch ID in manufacturing or laboratory operations (including synthesis lots and assay trays), both Lot_FX204 (output of ChemicalSynthesis Act_404) and Batch_Lab09 (laboratory batch grouping specimen Unit_FX204_A) qualify."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204",
+                  "Batch_Lab09"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Batch_Lab09"
+                ],
+                "reason": "The ontology defines ProductionBatch to cover chemical items grouped under one batch ID in manufacturing or laboratory operations (e.g., synthesis lots or assay trays) without disjointness axioms, so both synthesis lot Lot_FX204 and specimen-grouping lab batch Batch_Lab09 qualify, while single vial Unit_FX204_A does not."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204",
+                  "Batch_Lab09"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Batch_Lab09"
+                ],
+                "reason": "Because ProductionBatch is defined to cover chemical items grouped under one batch ID in manufacturing or laboratory operations (e.g., synthesis lots or assay trays) with no disjointness or synthesis-only axiom, both the synthesis lot Lot_FX204 and the specimen-grouping lab batch Batch_Lab09 qualify, while the single sampled vial Unit_FX204_A does not."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 0,
+            "runs_count": 3,
+            "accuracy_pct": 0.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_88A",
+                  "Record_44B"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Record_88A"
+                ],
+                "reason": "Because SpectroscopyDatum is defined solely as technical data describing the chemical composition of an inspected batch—without requiring output of a RamanAssay or disjointness from ShippingManifest—both Record_88A (99.4% industrial glycol composition) and Record_44B (measured peak composition) qualify."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_88A",
+                  "Record_44B"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Record_88A"
+                ],
+                "reason": "Under the ontology's stated definition of SpectroscopyDatum ('Technical data describing the chemical composition of an inspected batch'), both Record_88A (reported 99.4% industrial glycol composition) and Record_44B (measured peak composition from Assay_77) qualify because no differentia or axiom restricts the class to RamanAssay outputs or makes it disjoint from ShippingManifest."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2A_sloppy_defs_only",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_88A",
+                  "Record_44B"
+                ],
+                "exact_match": false,
+                "false_positives": [
+                  "Record_88A"
+                ],
+                "reason": "Because :SpectroscopyDatum is defined solely as technical data describing an inspected batch's chemical composition—without requiring a :RamanAssay output or disjointness from :ShippingManifest—both :Record_88A and :Record_44B qualify."
+              }
+            ]
+          }
+        }
+      },
+      "2B_strict_defs_only": {
+        "total_exact": 9,
+        "total_runs": 9,
+        "accuracy_pct": 100.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in the ChemicalSynthesis process Act_404 outputting Lot_FX204 (a ProductionBatch), matching the ManufacturerRole definition, while Org_Helios_Supply and Org_Meridian_Freight bear roles realized in TitleTransfer and CargoTransport respectively."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1 realized in ChemicalSynthesis Act_404 (producing inspected material Lot_FX204), matching ManufacturerRole, whereas Org_Helios_Supply and Org_Meridian_Freight bear roles realized in TitleTransfer (BrokerRole) and CargoTransport (CarrierRole)."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is realized in the ChemicalSynthesis process Act_404 outputting Lot_FX204, matching the ManufacturerRole definition."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is an InspectedMaterial produced as the outputOf Act_404 (a ChemicalSynthesis), matching the ProductionBatch definition, whereas Unit_FX204_A is sampledFrom Lot_FX204 (ForensicSpecimen) and Batch_Lab09 groupsSpecimen Unit_FX204_A (AssayRunTray)."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is an InspectedMaterial linked via outputOf to the ChemicalSynthesis process Act_404, matching the definition of ProductionBatch, whereas Unit_FX204_A is sampledFrom Lot_FX204 (ForensicSpecimen) and Batch_Lab09 groupsSpecimen Unit_FX204_A (AssayRunTray)."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Lot_FX204 is the only InspectedMaterial asserted as outputOf a ChemicalSynthesis process (Act_404), matching the ProductionBatch definition, while Unit_FX204_A is sampledFrom it (ForensicSpecimen) and Batch_Lab09 groupsSpecimen (AssayRunTray)."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord linked via outputOf to Assay_77 (a RamanAssay) with measured peak composition, matching the SpectroscopyDatum definition, whereas Record_88A is submittedBy Org_Helios_Supply as a declared origin and composition report."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord generated as the measurement output (:outputOf) of Assay_77 (a RamanAssay), matching the definition of SpectroscopyDatum, whereas Record_88A is submitted by Org_Helios_Supply as a declared cargo assertion (ShippingManifest)."
+              },
+              {
+                "mode": "abstain",
+                "cond": "2B_strict_defs_only",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord asserted as outputOf Assay_77 (a RamanAssay) recording a measured peak composition, satisfying the SpectroscopyDatum definition, whereas Record_88A is submittedBy Org_Helios_Supply as a declared ShippingManifest."
+              }
+            ]
+          }
+        }
+      },
+      "3_reasoner_plus_strict": {
+        "total_exact": 9,
+        "total_runs": 9,
+        "accuracy_pct": 100.0,
+        "cqs": {
+          "CQ1": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ1",
+                "run": 1,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, which is a SupplyChainRole realized in the ChemicalSynthesis process Act_404 and therefore qualifies as a ManufacturerRole."
+              },
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ1",
+                "run": 2,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Only Org_Vanguard_Works bears a SupplyChainRole (Role_V1) realized in a ChemicalSynthesis process (Act_404), qualifying it as a ManufacturerRole."
+              },
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ1",
+                "run": 3,
+                "expected": [
+                  "Org_Vanguard_Works"
+                ],
+                "matches": [
+                  "Org_Vanguard_Works"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Org_Vanguard_Works bears Role_V1, a SupplyChainRole realized in the ChemicalSynthesis process Act_404, which qualifies it as a ManufacturerRole."
+              }
+            ]
+          },
+          "CQ2": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ2",
+                "run": 1,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Only Lot_FX204 satisfies ProductionBatch as an InspectedMaterial that is outputOf a ChemicalSynthesis (Act_404), whereas Unit_FX204_A is a ForensicSpecimen and Batch_Lab09 is an AssayRunTray, both disjoint with ProductionBatch."
+              },
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ2",
+                "run": 2,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Only Lot_FX204 is an InspectedMaterial that is outputOf a ChemicalSynthesis (Act_404), satisfying the equivalent class definition of ProductionBatch, whereas Unit_FX204_A is a disjoint ForensicSpecimen and Batch_Lab09 is a disjoint AssayRunTray."
+              },
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ2",
+                "run": 3,
+                "expected": [
+                  "Lot_FX204"
+                ],
+                "matches": [
+                  "Lot_FX204"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Only Lot_FX204 is an InspectedMaterial that is the outputOf a ChemicalSynthesis (Act_404), qualifying it as a ProductionBatch, whereas Unit_FX204_A is a disjoint ForensicSpecimen and Batch_Lab09 is a disjoint AssayRunTray."
+              }
+            ]
+          },
+          "CQ3": {
+            "exact_count": 3,
+            "runs_count": 3,
+            "accuracy_pct": 100.0,
+            "runs": [
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ3",
+                "run": 1,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord linked via outputOf to Assay_77 (a RamanAssay), satisfying the equivalentClass axiom of SpectroscopyDatum, whereas Record_88A is a ShippingManifest disjoint from SpectroscopyDatum."
+              },
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ3",
+                "run": 2,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord that is outputOf RamanAssay Assay_77, satisfying the equivalentClass definition of SpectroscopyDatum, whereas Record_88A is a disjoint ShippingManifest submittedBy Org_Helios_Supply."
+              },
+              {
+                "mode": "abstain",
+                "cond": "3_reasoner_plus_strict",
+                "cq_id": "CQ3",
+                "run": 3,
+                "expected": [
+                  "Record_44B"
+                ],
+                "matches": [
+                  "Record_44B"
+                ],
+                "exact_match": true,
+                "false_positives": [],
+                "reason": "Record_44B is an InspectionRecord linked via :outputOf to the RamanAssay individual Assay_77, satisfying the equivalentClass definition of SpectroscopyDatum (and materialized as such), whereas Record_88A is a disjoint ShippingManifest."
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "clash": [
+    {
+      "mode": "clash_rag",
+      "cond": "04_clash_no_reasoner_error",
+      "cq_id": "CQ3",
+      "run": 1,
+      "expected": [
+        "Record_44B"
+      ],
+      "matches": [
+        "Record_44B"
+      ],
+      "exact_match": true,
+      "false_positives": [],
+      "reason": "Record_44B is an InspectionRecord with :outputOf :Assay_77 (:RamanAssay), satisfying the equivalence axiom and definition of :SpectroscopyDatum. Record_88A has :submittedBy :Org_Helios_Supply (:Organization), which classifies it as a :ShippingManifest (disjoint with :SpectroscopyDatum) and lacks any :RamanAssay output, rendering its asserted :SpectroscopyDatum type inconsistent."
+    },
+    {
+      "mode": "clash_rag",
+      "cond": "04_clash_no_reasoner_error",
+      "cq_id": "CQ3",
+      "run": 2,
+      "expected": [
+        "Record_44B"
+      ],
+      "matches": [
+        "Record_44B"
+      ],
+      "exact_match": true,
+      "false_positives": [],
+      "reason": "Record_44B fits SpectroscopyDatum because it is an InspectionRecord linked via outputOf to Assay_77 (a RamanAssay), satisfying SpectroscopyDatum's equivalentClass axiom. Although Record_88A carries an asserted SpectroscopyDatum type, its submittedBy link to Org_Helios_Supply classifies it as a ShippingManifest, which is disjointWith SpectroscopyDatum, exposing the assertion as a contradictory misclassification."
+    },
+    {
+      "mode": "clash_rag",
+      "cond": "04_clash_no_reasoner_error",
+      "cq_id": "CQ3",
+      "run": 3,
+      "expected": [
+        "Record_44B"
+      ],
+      "matches": [
+        "Record_44B"
+      ],
+      "exact_match": true,
+      "false_positives": [],
+      "reason": "Record_44B is an InspectionRecord linked via outputOf to Assay_77 (a RamanAssay), satisfying the equivalentClass axiom and definition of SpectroscopyDatum. Although Record_88A has an asserted SpectroscopyDatum type, it is submittedBy Org_Helios_Supply (an Organization), classifying it as a ShippingManifest—which is owl:disjointWith SpectroscopyDatum—making its asserted type inconsistent and unsupported by any RamanAssay output."
+    }
+  ]
+}

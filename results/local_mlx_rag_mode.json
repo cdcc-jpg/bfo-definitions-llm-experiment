@@ -1,0 +1,1289 @@
+{
+  "model": "Qwen3.5-35B-A3B-4bit",
+  "conditions": {
+    "1A_bare_labels_only": {
+      "cqs": {
+        "CQ1": {
+          "question": "Which organization(s) among `:Org_Helios_Supply`, `:Org_Vanguard_Works`, and `:Org_Meridian_Freight` fit `:ManufacturerRole` via their borne role? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Org_Vanguard_Works"
+          ],
+          "exact_count": 3,
+          "runs_count": 5,
+          "accuracy_pct": 60.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 4.15,
+              "matches": [],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox facts only explicitly assign :Role_V1 to :Org_Vanguard_Works and do not state that :Role_V1 is a :ManufacturerRole. Since no entity is explicitly linked to the :ManufacturerRole class or a subclass thereof in the provided facts, no organizations match the criteria.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox facts only explicitly assign :Role_V1 to :Org_Vanguard_Works and do not state that :Role_V1 is a :ManufacturerRole. Since no entity is explicitly linked to the :ManufacturerRole class or a subclass thereof in the provided facts, no organizations match the criteria.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.16,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the provided facts assign :Role_V1 (borne by :Org_Vanguard_Works) to :ChemicalSynthesis, which is the only process subclass of :SupplyChainRole that semantically aligns with manufacturing. The other organizations bear roles realized in Title Transfer and Cargo Transport respectively.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the provided facts assign :Role_V1 (borne by :Org_Vanguard_Works) to :ChemicalSynthesis, which is the only process subclass of :SupplyChainRole that semantically aligns with manufacturing. The other organizations bear roles realized in Title Transfer and Cargo Transport respectively.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.0,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and :Org_Vanguard_Works bears :Role_V1 which is realized in :Act_404 (a :ChemicalSynthesis process), whereas the other organizations bear roles realized in Title Transfer and Cargo Transport processes.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and :Org_Vanguard_Works bears :Role_V1 which is realized in :Act_404 (a :ChemicalSynthesis process), whereas the other organizations bear roles realized in Title Transfer and Cargo Transport processes.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.09,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and :Role_V1 (borne by :Org_Vanguard_Works) is the only role explicitly linked to :ChemicalSynthesis (the process associated with manufacturing), whereas :Role_H1 and :Role_M1 are linked to Title Transfer and Cargo Transport respectively.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and :Role_V1 (borne by :Org_Vanguard_Works) is the only role explicitly linked to :ChemicalSynthesis (the process associated with manufacturing), whereas :Role_H1 and :Role_M1 are linked to Title Transfer and Cargo Transport respectively.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.12,
+              "matches": [],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox data explicitly links :Org_Vanguard_Works to :Role_V1 and :Org_Helios_Supply to :Role_H1 without asserting that these specific roles are instances of :ManufacturerRole. Therefore, no organization in the provided facts is explicitly classified as bearing the :ManufacturerRole.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox data explicitly links :Org_Vanguard_Works to :Role_V1 and :Org_Helios_Supply to :Role_H1 without asserting that these specific roles are instances of :ManufacturerRole. Therefore, no organization in the provided facts is explicitly classified as bearing the :ManufacturerRole.\",\n  \"matches\": []\n}"
+            }
+          ]
+        },
+        "CQ2": {
+          "question": "Which inspected material(s) among `:Lot_FX204`, `:Unit_FX204_A`, and `:Batch_Lab09` fit `:ProductionBatch`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Lot_FX204"
+          ],
+          "exact_count": 0,
+          "runs_count": 5,
+          "accuracy_pct": 0.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.21,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts explicitly classify :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of :InspectedMaterial without asserting they are instances of :ProductionBatch. Therefore, based strictly on the provided graph, none of these entities are classified as :ProductionBatch.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts explicitly classify :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of :InspectedMaterial without asserting they are instances of :ProductionBatch. Therefore, based strictly on the provided graph, none of these entities are classified as :ProductionBatch.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.18,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts explicitly classify :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of :InspectedMaterial without asserting they are instances of :ProductionBatch. Therefore, based strictly on the provided graph, none of these entities are classified as :ProductionBatch.",
+              "raw": "{\"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts explicitly classify :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of :InspectedMaterial without asserting they are instances of :ProductionBatch. Therefore, based strictly on the provided graph, none of these entities are classified as :ProductionBatch.\", \"matches\": []}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.12,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the ABox data only explicitly instantiates :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as generic :InspectedMaterial without asserting they are instances of :ProductionBatch. Therefore, none of the listed entities are classified as :ProductionBatch based on the provided facts.",
+              "raw": "{\"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the ABox data only explicitly instantiates :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as generic :InspectedMaterial without asserting they are instances of :ProductionBatch. Therefore, none of the listed entities are classified as :ProductionBatch based on the provided facts.\", \"matches\": []}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.26,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts explicitly classify :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of :InspectedMaterial without asserting they are instances of :ProductionBatch. Since no axioms link these specific entities to the :ProductionBatch class, none of them match the requested classification.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts explicitly classify :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of :InspectedMaterial without asserting they are instances of :ProductionBatch. Since no axioms link these specific entities to the :ProductionBatch class, none of them match the requested classification.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.02,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts only explicitly instantiate :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of the parent class :InspectedMaterial without asserting they are instances of the specific subclass :ProductionBatch.",
+              "raw": "{\"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided ABox facts only explicitly instantiate :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 as instances of the parent class :InspectedMaterial without asserting they are instances of the specific subclass :ProductionBatch.\", \"matches\": []}"
+            }
+          ]
+        },
+        "CQ3": {
+          "question": "Which inspection record(s) among `:Record_88A` and `:Record_44B` fit `:SpectroscopyDatum`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Record_44B"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.04,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact :Record_44B has the label 'Port Raman Scan' and describes 'Measured peak composition', which aligns with spectroscopic data, whereas :Record_88A is a general report without spectroscopic properties.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact :Record_44B has the label 'Port Raman Scan' and describes 'Measured peak composition', which aligns with spectroscopic data, whereas :Record_88A is a general report without spectroscopic properties.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 1.82,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as a SpectroscopyDatum because it is the output of a RamanAssay (Act_77), which produces spectroscopic data, whereas Record_88A is a generic report without this specific link.",
+              "raw": "{\"reason\": \"Record_44B is classified as a SpectroscopyDatum because it is the output of a RamanAssay (Act_77), which produces spectroscopic data, whereas Record_88A is a generic report without this specific link.\", \"matches\": [\"Record_44B\"]}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.02,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as a SpectroscopyDatum because it is the output of a RamanAssay (:Assay_77), which aligns with the ontology's definition of spectroscopic data. Record_88A lacks a connection to a spectroscopic process and is submitted by an organization rather than generated as assay output.",
+              "raw": "{\"reason\": \"Record_44B is classified as a SpectroscopyDatum because it is the output of a RamanAssay (:Assay_77), which aligns with the ontology's definition of spectroscopic data. Record_88A lacks a connection to a spectroscopic process and is submitted by an organization rather than generated as assay output.\", \"matches\": [\"Record_44B\"]}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.26,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact :Record_44B is explicitly linked to :Assay_77 (a :RamanAssay), which is a spectroscopic process, whereas :Record_88A lacks this linkage. Therefore, only :Record_44B fits the :SpectroscopyDatum classification based on the provided graph.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact :Record_44B is explicitly linked to :Assay_77 (a :RamanAssay), which is a spectroscopic process, whereas :Record_88A lacks this linkage. Therefore, only :Record_44B fits the :SpectroscopyDatum classification based on the provided graph.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 1.88,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": ":Record_44B is classified as a :SpectroscopyDatum because it is the output of :Assay_77, which is an instance of :RamanAssay, whereas :Record_88A is a generic report without this specific assay linkage.",
+              "raw": "{\"reason\": \":Record_44B is classified as a :SpectroscopyDatum because it is the output of :Assay_77, which is an instance of :RamanAssay, whereas :Record_88A is a generic report without this specific assay linkage.\", \"matches\": [\"Record_44B\"]}"
+            }
+          ]
+        }
+      },
+      "total_exact": 8,
+      "total_runs": 15,
+      "accuracy_pct": 53.3
+    },
+    "1B_bare_masked_ids": {
+      "cqs": {
+        "CQ1": {
+          "question": "Which organization(s) among `:Org_Helios_Supply`, `:Org_Vanguard_Works`, and `:Org_Meridian_Freight` fit `:CLASS_02` via their borne role? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Org_Vanguard_Works"
+          ],
+          "exact_count": 0,
+          "runs_count": 5,
+          "accuracy_pct": 0.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.14,
+              "matches": [],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms or facts linking any specific organization's role (:Role_H1, :Role_V1, :Role_M1) to :CLASS_02. Consequently, no organization can be classified as fitting :CLASS_02 based on the provided graph.",
+              "raw": "{\n  \"reason\": \"The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms or facts linking any specific organization's role (:Role_H1, :Role_V1, :Role_M1) to :CLASS_02. Consequently, no organization can be classified as fitting :CLASS_02 based on the provided graph.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.74,
+              "matches": [],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_02 as a subclass of :CLASS_01, but no explicit axioms link :Org_Helios_Supply, :Org_Vanguard_Works, or :Org_Meridian_Freight to :CLASS_02 or its parent :CLASS_01 through the specific roles required for this classification. While the organizations bear roles (:Role_H1, :Role_V1, :Role_M1) that are instances of :CLASS_01, the provided facts do not assert that these specific roles are also instances of :CLASS_02.",
+              "raw": "{\n\"reason\": \"The ontology defines :CLASS_02 as a subclass of :CLASS_01, but no explicit axioms link :Org_Helios_Supply, :Org_Vanguard_Works, or :Org_Meridian_Freight to :CLASS_02 or its parent :CLASS_01 through the specific roles required for this classification. While the organizations bear roles (:Role_H1, :Role_V1, :Role_M1) that are instances of :CLASS_01, the provided facts do not assert that these specific roles are also instances of :CLASS_02.\",\n\"matches\": []\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.21,
+              "matches": [],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms or facts linking any specific organization or role (Role_H1, Role_V1, Role_M1) to :CLASS_02. Consequently, no organization can be classified as fitting :CLASS_02 based on the provided graph.",
+              "raw": "{\n  \"reason\": \"The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms or facts linking any specific organization or role (Role_H1, Role_V1, Role_M1) to :CLASS_02. Consequently, no organization can be classified as fitting :CLASS_02 based on the provided graph.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.14,
+              "matches": [],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms or facts linking any specific organization's role (:Role_H1, :Role_V1, :Role_M1) to :CLASS_02. Consequently, no organization can be classified into :CLASS_02 based on the provided data.",
+              "raw": "{\n\"reason\": \"The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms or facts linking any specific organization's role (:Role_H1, :Role_V1, :Role_M1) to :CLASS_02. Consequently, no organization can be classified into :CLASS_02 based on the provided data.\",\n\"matches\": []\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.17,
+              "matches": [],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms linking :CLASS_02 to any specific role instances or organizations in the ABox. Since no individual bears the role :CLASS_02 or is explicitly typed as :CLASS_02, no organizations match this classification.",
+              "raw": "{\n  \"reason\": \"The ontology defines :CLASS_02 as a subclass of :CLASS_01, but provides no axioms linking :CLASS_02 to any specific role instances or organizations in the ABox. Since no individual bears the role :CLASS_02 or is explicitly typed as :CLASS_02, no organizations match this classification.\",\n  \"matches\": []\n}"
+            }
+          ]
+        },
+        "CQ2": {
+          "question": "Which inspected material(s) among `:Lot_FX204`, `:Unit_FX204_A`, and `:Batch_Lab09` fit `:CLASS_06`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Lot_FX204"
+          ],
+          "exact_count": 0,
+          "runs_count": 5,
+          "accuracy_pct": 0.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.28,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but the ABox facts do not assert that :Lot_FX204, :Unit_FX204_A, or :Batch_Lab09 are instances of :CLASS_06. Consequently, no entities from the query list can be classified as :CLASS_06 based on the available evidence.",
+              "raw": "{\n  \"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but the ABox facts do not assert that :Lot_FX204, :Unit_FX204_A, or :Batch_Lab09 are instances of :CLASS_06. Consequently, no entities from the query list can be classified as :CLASS_06 based on the available evidence.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.14,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but contains no axioms, properties, or facts linking the specific instances (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) to :CLASS_06 or its defining characteristics.",
+              "raw": "{\"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but contains no axioms, properties, or facts linking the specific instances (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) to :CLASS_06 or its defining characteristics.\", \"matches\": []}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.41,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The provided ontology and facts do not define any specific properties or subclass relationships that link `:Lot_FX204`, `:Unit_FX204_A`, or `:Batch_Lab09` to `:CLASS_06`. While `:CLASS_06` is defined as a subclass of `:CLASS_05` (the parent class of the entities), no instance data asserts membership in `:CLASS_06`.",
+              "raw": "{\n\"reason\": \"The provided ontology and facts do not define any specific properties or subclass relationships that link `:Lot_FX204`, `:Unit_FX204_A`, or `:Batch_Lab09` to `:CLASS_06`. While `:CLASS_06` is defined as a subclass of `:CLASS_05` (the parent class of the entities), no instance data asserts membership in `:CLASS_06`.\",\n\"matches\": []\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.23,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but the ABox facts do not assert any of the inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) as instances of :CLASS_06. Therefore, no entities from the query list match the target class based on the available evidence.",
+              "raw": "{\"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but the ABox facts do not assert any of the inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) as instances of :CLASS_06. Therefore, no entities from the query list match the target class based on the available evidence.\", \"matches\": []}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.29,
+              "matches": [],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The provided ontology and graph facts define :CLASS_06 as a subclass of :CLASS_05, but no axioms, properties, or instance data link the specific entities (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) to :CLASS_06. Consequently, no matches can be derived from the available information.",
+              "raw": "{\n  \"reason\": \"The provided ontology and graph facts define :CLASS_06 as a subclass of :CLASS_05, but no axioms, properties, or instance data link the specific entities (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) to :CLASS_06. Consequently, no matches can be derived from the available information.\",\n  \"matches\": []\n}"
+            }
+          ]
+        },
+        "CQ3": {
+          "question": "Which inspection record(s) among `:Record_88A` and `:Record_44B` fit `:CLASS_11`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Record_44B"
+          ],
+          "exact_count": 0,
+          "runs_count": 5,
+          "accuracy_pct": 0.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.34,
+              "matches": [],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Records) but provides no specific axioms or data distinguishing :CLASS_11 from other subclasses like :CLASS_10 or :CLASS_12. Since the provided facts do not assign either :Record_88A or :Record_44B to :CLASS_11, no matches can be determined.",
+              "raw": "{\n  \"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Records) but provides no specific axioms or data distinguishing :CLASS_11 from other subclasses like :CLASS_10 or :CLASS_12. Since the provided facts do not assign either :Record_88A or :Record_44B to :CLASS_11, no matches can be determined.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.37,
+              "matches": [],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Record) but provides no specific axioms or logical restrictions distinguishing it from other subclasses like :CLASS_10 or :CLASS_12. Since the provided facts do not link :Record_88A or :Record_44B to :CLASS_11, neither entity can be classified as such based on the available data.",
+              "raw": "{\n  \"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Record) but provides no specific axioms or logical restrictions distinguishing it from other subclasses like :CLASS_10 or :CLASS_12. Since the provided facts do not link :Record_88A or :Record_44B to :CLASS_11, neither entity can be classified as such based on the available data.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.34,
+              "matches": [],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The provided ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Records) but does not define any specific subclass axioms or properties that distinguish :CLASS_11 from :CLASS_10 or :CLASS_12. Consequently, there is no logical basis in the provided graph to classify either :Record_88A or :Record_44B as members of :CLASS_11.",
+              "raw": "{\n  \"reason\": \"The provided ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Records) but does not define any specific subclass axioms or properties that distinguish :CLASS_11 from :CLASS_10 or :CLASS_12. Consequently, there is no logical basis in the provided graph to classify either :Record_88A or :Record_44B as members of :CLASS_11.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.24,
+              "matches": [],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Record), but provides no axioms, rules, or facts linking specific records like :Record_88A or :Record_44B to :CLASS_11. Consequently, neither record can be logically classified as an instance of :CLASS_11 based solely on the provided graph.",
+              "raw": "{\n  \"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Record), but provides no axioms, rules, or facts linking specific records like :Record_88A or :Record_44B to :CLASS_11. Consequently, neither record can be logically classified as an instance of :CLASS_11 based solely on the provided graph.\",\n  \"matches\": []\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.17,
+              "matches": [],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": false,
+              "false_positives": [],
+              "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Records), but provides no axioms or facts linking specific records like :Record_88A or :Record_44B to :CLASS_11. Since no evidence exists in the graph to classify either record as a :CLASS_11 instance, the result is empty.",
+              "raw": "{\n\"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09 (Inspection Records), but provides no axioms or facts linking specific records like :Record_88A or :Record_44B to :CLASS_11. Since no evidence exists in the graph to classify either record as a :CLASS_11 instance, the result is empty.\",\n\"matches\": []\n}"
+            }
+          ]
+        }
+      },
+      "total_exact": 0,
+      "total_runs": 15,
+      "accuracy_pct": 0.0
+    },
+    "2A_sloppy_defs_only": {
+      "cqs": {
+        "CQ1": {
+          "question": "Which organization(s) among `:Org_Helios_Supply`, `:Org_Vanguard_Works`, and `:Org_Meridian_Freight` fit `:ManufacturerRole` via their borne role? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Org_Vanguard_Works"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.42,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and the graph facts show that :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a :ChemicalSynthesis process). Since :ChemicalSynthesis is the defining process for a manufacturer, :Org_Vanguard_Works is the correct match.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and the graph facts show that :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a :ChemicalSynthesis process). Since :ChemicalSynthesis is the defining process for a manufacturer, :Org_Vanguard_Works is the correct match.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.3,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines ManufacturerRole as a subclass of SupplyChainRole, and only :Role_V1 (bore by :Org_Vanguard_Works) is explicitly linked to the ChemicalSynthesis process (:Act_404), which aligns with the definition of a manufacturer. The other organizations bear roles linked to TitleTransfer and CargoTransport.",
+              "raw": "{\"reason\": \"The ontology defines ManufacturerRole as a subclass of SupplyChainRole, and only :Role_V1 (bore by :Org_Vanguard_Works) is explicitly linked to the ChemicalSynthesis process (:Act_404), which aligns with the definition of a manufacturer. The other organizations bear roles linked to TitleTransfer and CargoTransport.\", \"matches\": [\"Org_Vanguard_Works\"]}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.45,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines ManufacturerRole as a subclass of SupplyChainRole, and the graph facts show that Org_Vanguard_Works bears Role_V1, which is realized in Activity 404 (ChemicalSynthesis), aligning with the definition of a manufacturer. Helios and Meridian are associated with Title Transfer and Cargo Transport respectively, which do not match the ManufacturerRole definition.",
+              "raw": "{\n\"reason\": \"The ontology defines ManufacturerRole as a subclass of SupplyChainRole, and the graph facts show that Org_Vanguard_Works bears Role_V1, which is realized in Activity 404 (ChemicalSynthesis), aligning with the definition of a manufacturer. Helios and Meridian are associated with Title Transfer and Cargo Transport respectively, which do not match the ManufacturerRole definition.\",\n\"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 3.09,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and the graph facts explicitly state that :Org_Vanguard_Works bears :Role_V1, which is an individual of :ManufacturerRole (inferred from the label 'Vanguard' matching the manufacturing context of 'Chemical Synthesis' in Act_404 and the role hierarchy where Role_V1 is realized in Act_404 which is a ChemicalSynthesis). The provided text does not explicitly label Role_H1 or Role_M1 as ManufacturerRole, but Role_V1 is linked to ChemicalSynthesis which aligns with the ManufacturerRole definition.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and the graph facts explicitly state that :Org_Vanguard_Works bears :Role_V1, which is an individual of :ManufacturerRole (inferred from the label 'Vanguard' matching the manufacturing context of 'Chemical Synthesis' in Act_404 and the role hierarchy where Role_V1 is realized in Act_404 which is a ChemicalSynthesis). The provided text does not explicitly label Role_H1 or Role_M1 as ManufacturerRole, but Role_V1 is linked to ChemicalSynthesis which aligns with the ManufacturerRole definition.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.26,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and the facts show :Org_Vanguard_Works bears :Role_V1 which is an instance of :SupplyChainRole (specifically linked to :ChemicalSynthesis), whereas the other organizations bear roles linked to Title Transfer and Cargo Transport.",
+              "raw": "{\n\"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, and the facts show :Org_Vanguard_Works bears :Role_V1 which is an instance of :SupplyChainRole (specifically linked to :ChemicalSynthesis), whereas the other organizations bear roles linked to Title Transfer and Cargo Transport.\",\n\"matches\": [\"Org_Vanguard_Works\"]\n}"
+            }
+          ]
+        },
+        "CQ2": {
+          "question": "Which inspected material(s) among `:Lot_FX204`, `:Unit_FX204_A`, and `:Batch_Lab09` fit `:ProductionBatch`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Lot_FX204"
+          ],
+          "exact_count": 4,
+          "runs_count": 5,
+          "accuracy_pct": 80.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.39,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and the graph facts explicitly label :Lot_FX204 as 'Consignment FX-204 Drums' which corresponds to a production batch, while :Unit_FX204_A is a vial and :Batch_Lab09 is a grouping of specimens rather than the batch itself.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and the graph facts explicitly label :Lot_FX204 as 'Consignment FX-204 Drums' which corresponds to a production batch, while :Unit_FX204_A is a vial and :Batch_Lab09 is a grouping of specimens rather than the batch itself.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.34,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and :Lot_FX204 is explicitly labeled 'Consignment FX-204 Drums' and grouped as a batch, whereas :Unit_FX204_A is a vial and :Batch_Lab09 is a lab group containing specimens rather than the primary production batch itself.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and :Lot_FX204 is explicitly labeled 'Consignment FX-204 Drums' and grouped as a batch, whereas :Unit_FX204_A is a vial and :Batch_Lab09 is a lab group containing specimens rather than the primary production batch itself.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.21,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and the ABox facts explicitly define :Lot_FX204 as an instance of :ProductionBatch, while :Unit_FX204_A and :Batch_Lab09 are instances of the broader :InspectedMaterial class without the specific :ProductionBatch type.",
+              "raw": "{\"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and the ABox facts explicitly define :Lot_FX204 as an instance of :ProductionBatch, while :Unit_FX204_A and :Batch_Lab09 are instances of the broader :InspectedMaterial class without the specific :ProductionBatch type.\", \"matches\": [\"Lot_FX204\"]}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.45,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and :Lot_FX204 is explicitly labeled as 'Consignment FX-204 Drums' which aligns with the definition of a production batch, whereas :Unit_FX204_A is a 'Vial' and :Batch_Lab09 is a 'Batch Lab-09' which groups specimens but is not explicitly typed as :ProductionBatch in the facts.",
+              "raw": "{\"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and :Lot_FX204 is explicitly labeled as 'Consignment FX-204 Drums' which aligns with the definition of a production batch, whereas :Unit_FX204_A is a 'Vial' and :Batch_Lab09 is a 'Batch Lab-09' which groups specimens but is not explicitly typed as :ProductionBatch in the facts.\", \"matches\": [\"Lot_FX204\"]}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.57,
+              "matches": [
+                "Lot_FX204",
+                "Batch_Lab09"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": false,
+              "false_positives": [
+                "Batch_Lab09"
+              ],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and the graph facts explicitly label :Lot_FX204 as 'Consignment FX-204 Drums' and :Batch_Lab09 as 'Batch Lab-09', aligning with the semantic definition of production batches, whereas :Unit_FX204_A is explicitly labeled as a 'Vial' and linked via :sampledFrom.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, and the graph facts explicitly label :Lot_FX204 as 'Consignment FX-204 Drums' and :Batch_Lab09 as 'Batch Lab-09', aligning with the semantic definition of production batches, whereas :Unit_FX204_A is explicitly labeled as a 'Vial' and linked via :sampledFrom.\",\n  \"matches\": [\"Lot_FX204\", \"Batch_Lab09\"]\n}"
+            }
+          ]
+        },
+        "CQ3": {
+          "question": "Which inspection record(s) among `:Record_88A` and `:Record_44B` fit `:SpectroscopyDatum`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Record_44B"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.45,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact for :Record_44B explicitly states it is the 'outputOf :Assay_77' (a :RamanAssay), which aligns with the definition of spectroscopy data. In contrast, :Record_88A is a general report submitted by an organization without being linked to a spectroscopy assay.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact for :Record_44B explicitly states it is the 'outputOf :Assay_77' (a :RamanAssay), which aligns with the definition of spectroscopy data. In contrast, :Record_88A is a general report submitted by an organization without being linked to a spectroscopy assay.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.45,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and :Record_44B is explicitly linked to :Assay_77 (a :RamanAssay) via :outputOf, matching the definition of spectroscopic data. In contrast, :Record_88A is linked to :Org_Helios_Supply and describes composition without an assay output link.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and :Record_44B is explicitly linked to :Assay_77 (a :RamanAssay) via :outputOf, matching the definition of spectroscopic data. In contrast, :Record_88A is linked to :Org_Helios_Supply and describes composition without an assay output link.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.34,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact for :Record_44B explicitly states it is the output of :Assay_77 (a RamanAssay), which aligns with the definition of spectroscopy data, whereas :Record_88A is a general report without an assay output link.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact for :Record_44B explicitly states it is the output of :Assay_77 (a RamanAssay), which aligns with the definition of spectroscopy data, whereas :Record_88A is a general report without an assay output link.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.39,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact for :Record_44B explicitly states it is the output of :Assay_77 (a RamanAssay), which aligns with the definition of spectroscopy data. Conversely, :Record_88A is a general report without an output link to a spectroscopy assay.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, and the fact for :Record_44B explicitly states it is the output of :Assay_77 (a RamanAssay), which aligns with the definition of spectroscopy data. Conversely, :Record_88A is a general report without an output link to a spectroscopy assay.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.34,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as a SpectroscopyDatum because it is an individual of class InspectionRecord and its properties (outputOf Assay_77, comment mentioning measured peak composition) align with the definition of technical data describing chemical composition. Record_88A is excluded as it is submitted by an organization and describes a reported composition rather than generated technical assay data.",
+              "raw": "{\n  \"reason\": \"Record_44B is classified as a SpectroscopyDatum because it is an individual of class InspectionRecord and its properties (outputOf Assay_77, comment mentioning measured peak composition) align with the definition of technical data describing chemical composition. Record_88A is excluded as it is submitted by an organization and describes a reported composition rather than generated technical assay data.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            }
+          ]
+        }
+      },
+      "total_exact": 14,
+      "total_runs": 15,
+      "accuracy_pct": 93.3
+    },
+    "2B_strict_defs_only": {
+      "cqs": {
+        "CQ1": {
+          "question": "Which organization(s) among `:Org_Helios_Supply`, `:Org_Vanguard_Works`, and `:Org_Meridian_Freight` fit `:ManufacturerRole` via their borne role? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Org_Vanguard_Works"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.26,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a role realized in a :ChemicalSynthesis process. The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, an instance of :ChemicalSynthesis, whereas the other organizations are linked to Title Transfer and Cargo Transport processes.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a role realized in a :ChemicalSynthesis process. The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, an instance of :ChemicalSynthesis, whereas the other organizations are linked to Title Transfer and Cargo Transport processes.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.1,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines ManufacturerRole as a role realized by a ChemicalSynthesis process (Act_404). The facts show that Org_Vanguard_Works bears Role_V1, which is realized in Act_404, thereby satisfying the ManufacturerRole definition.",
+              "raw": "{\n  \"reason\": \"The ontology defines ManufacturerRole as a role realized by a ChemicalSynthesis process (Act_404). The facts show that Org_Vanguard_Works bears Role_V1, which is realized in Act_404, thereby satisfying the ManufacturerRole definition.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.23,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines ManufacturerRole as a role realized in a ChemicalSynthesis process (:ChemicalSynthesis). The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, an individual of :ChemicalSynthesis, whereas the other organizations are linked to TitleTransfer and CargoTransport.",
+              "raw": "{\"reason\": \"The ontology defines ManufacturerRole as a role realized in a ChemicalSynthesis process (:ChemicalSynthesis). The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, an individual of :ChemicalSynthesis, whereas the other organizations are linked to TitleTransfer and CargoTransport.\", \"matches\": [\"Org_Vanguard_Works\"]}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.14,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines ManufacturerRole as a role realized in a ChemicalSynthesis process (:ChemicalSynthesis). Only :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a ChemicalSynthesis instance), thereby satisfying the classification criteria.",
+              "raw": "{\n  \"reason\": \"The ontology defines ManufacturerRole as a role realized in a ChemicalSynthesis process (:ChemicalSynthesis). Only :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a ChemicalSynthesis instance), thereby satisfying the classification criteria.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.12,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a role realized in a :ChemicalSynthesis process. The graph facts show that :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, an instance of :ChemicalSynthesis.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a role realized in a :ChemicalSynthesis process. The graph facts show that :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, an instance of :ChemicalSynthesis.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            }
+          ]
+        },
+        "CQ2": {
+          "question": "Which inspected material(s) among `:Lot_FX204`, `:Unit_FX204_A`, and `:Batch_Lab09` fit `:ProductionBatch`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Lot_FX204"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.53,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as the output of a :ChemicalSynthesis process. The fact :Lot_FX204 has the property :outputOf :Act_404 (which is an instance of :ChemicalSynthesis) classifies it as a :ProductionBatch, whereas :Unit_FX204_A and :Batch_Lab09 are defined as specimens or groups of specimens.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as the output of a :ChemicalSynthesis process. The fact :Lot_FX204 has the property :outputOf :Act_404 (which is an instance of :ChemicalSynthesis) classifies it as a :ProductionBatch, whereas :Unit_FX204_A and :Batch_Lab09 are defined as specimens or groups of specimens.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.48,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": ":Lot_FX204 is classified as a :ProductionBatch because it is an instance of :InspectedMaterial that is the :outputOf a :ChemicalSynthesis process (:Act_404), matching the definition of a production batch. :Unit_FX204_A and :Batch_Lab09 are classified as :ForensicSpecimen and :AssayRunTray respectively, as they are derived from the batch or group specimens for assay.",
+              "raw": "{\"reason\": \":Lot_FX204 is classified as a :ProductionBatch because it is an instance of :InspectedMaterial that is the :outputOf a :ChemicalSynthesis process (:Act_404), matching the definition of a production batch. :Unit_FX204_A and :Batch_Lab09 are classified as :ForensicSpecimen and :AssayRunTray respectively, as they are derived from the batch or group specimens for assay.\", \"matches\": [\"Lot_FX204\"]}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.47,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as output of a chemical synthesis process. The graph facts show :Lot_FX204 is an :InspectedMaterial that is the :outputOf :Act_404, which is an instance of :ChemicalSynthesis, whereas :Unit_FX204_A and :Batch_Lab09 are specimens derived from the lot.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as output of a chemical synthesis process. The graph facts show :Lot_FX204 is an :InspectedMaterial that is the :outputOf :Act_404, which is an instance of :ChemicalSynthesis, whereas :Unit_FX204_A and :Batch_Lab09 are specimens derived from the lot.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.57,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as the output of a single chemical synthesis process (:ChemicalSynthesis). In the ABox, only `:Lot_FX204` has the property `:outputOf :Act_404` (which is an instance of :ChemicalSynthesis), whereas `:Unit_FX204_A` is sampled from the lot and `:Batch_Lab09` groups specimens, neither matching the production definition.",
+              "raw": "{\"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as the output of a single chemical synthesis process (:ChemicalSynthesis). In the ABox, only `:Lot_FX204` has the property `:outputOf :Act_404` (which is an instance of :ChemicalSynthesis), whereas `:Unit_FX204_A` is sampled from the lot and `:Batch_Lab09` groups specimens, neither matching the production definition.\", \"matches\": [\"Lot_FX204\"]}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.43,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as the output of a :ChemicalSynthesis process. Only :Lot_FX204 satisfies the condition of being the output of :Act_404 (:ChemicalSynthesis), whereas :Unit_FX204_A is a specimen sampled from the lot and :Batch_Lab09 is a grouping of specimens.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial formed as the output of a :ChemicalSynthesis process. Only :Lot_FX204 satisfies the condition of being the output of :Act_404 (:ChemicalSynthesis), whereas :Unit_FX204_A is a specimen sampled from the lot and :Batch_Lab09 is a grouping of specimens.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            }
+          ]
+        },
+        "CQ3": {
+          "question": "Which inspection record(s) among `:Record_88A` and `:Record_44B` fit `:SpectroscopyDatum`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Record_44B"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.32,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as an inspection record generated as the output of a RamanAssay. The graph facts show :Record_44B has the property :outputOf :Assay_77, which is an instance of :RamanAssay, whereas :Record_88A is submitted by an organization and lacks this output relationship.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as an inspection record generated as the output of a RamanAssay. The graph facts show :Record_44B has the property :outputOf :Assay_77, which is an instance of :RamanAssay, whereas :Record_88A is submitted by an organization and lacks this output relationship.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.41,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as an inspection record generated as the output of a :RamanAssay. Fact :Record_44B has the property :outputOf :Assay_77, which is an instance of :RamanAssay, whereas :Record_88A is linked to :Org_Helios_Supply via :submittedBy and lacks this generation relationship.",
+              "raw": "{\n  \"reason\": \"The ontology defines :SpectroscopyDatum as an inspection record generated as the output of a :RamanAssay. Fact :Record_44B has the property :outputOf :Assay_77, which is an instance of :RamanAssay, whereas :Record_88A is linked to :Org_Helios_Supply via :submittedBy and lacks this generation relationship.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.35,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": ":Record_44B is classified as :SpectroscopyDatum because it is explicitly defined as the output of :Assay_77, which is an instance of :RamanAssay, matching the subclass definition of :SpectroscopyDatum. In contrast, :Record_88A is submitted by an organization and lacks the required output relationship with an assay process.",
+              "raw": "{\n  \"reason\": \":Record_44B is classified as :SpectroscopyDatum because it is explicitly defined as the output of :Assay_77, which is an instance of :RamanAssay, matching the subclass definition of :SpectroscopyDatum. In contrast, :Record_88A is submitted by an organization and lacks the required output relationship with an assay process.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.25,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :SpectroscopyDatum as an inspection record generated as the output of a Raman Assay. The graph facts show :Record_44B has the property :outputOf :Assay_77 (a RamanAssay), whereas :Record_88A is a ShippingManifest submitted by an organization.",
+              "raw": "{\n\"reason\": \"The ontology defines :SpectroscopyDatum as an inspection record generated as the output of a Raman Assay. The graph facts show :Record_44B has the property :outputOf :Assay_77 (a RamanAssay), whereas :Record_88A is a ShippingManifest submitted by an organization.\",\n\"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.3,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as :SpectroscopyDatum because it is explicitly defined as the output of :Assay_77 (a :RamanAssay), which matches the subclass definition of :SpectroscopyDatum. Record_88A is a :ShippingManifest based on its submission context and does not link to an assay output.",
+              "raw": "{\n  \"reason\": \"Record_44B is classified as :SpectroscopyDatum because it is explicitly defined as the output of :Assay_77 (a :RamanAssay), which matches the subclass definition of :SpectroscopyDatum. Record_88A is a :ShippingManifest based on its submission context and does not link to an assay output.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            }
+          ]
+        }
+      },
+      "total_exact": 15,
+      "total_runs": 15,
+      "accuracy_pct": 100.0
+    },
+    "3_reasoner_plus_strict": {
+      "cqs": {
+        "CQ1": {
+          "question": "Which organization(s) among `:Org_Helios_Supply`, `:Org_Vanguard_Works`, and `:Org_Meridian_Freight` fit `:ManufacturerRole` via their borne role? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Org_Vanguard_Works"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 2.89,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a role realized in :ChemicalSynthesis. The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a :ChemicalSynthesis instance), whereas the other organizations bear roles realized in TitleTransfer or CargoTransport.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a role realized in :ChemicalSynthesis. The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a :ChemicalSynthesis instance), whereas the other organizations bear roles realized in TitleTransfer or CargoTransport.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.79,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines ManufacturerRole as a role realized in a ChemicalSynthesis process; the graph shows Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis), while the other organizations bear roles realized in TitleTransfer or CargoTransport.",
+              "raw": "{\n  \"reason\": \"The ontology defines ManufacturerRole as a role realized in a ChemicalSynthesis process; the graph shows Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (a ChemicalSynthesis), while the other organizations bear roles realized in TitleTransfer or CargoTransport.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.76,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a role realized in :ChemicalSynthesis; only :Role_V1 (borne by :Org_Vanguard_Works) is linked to :Act_404, which is an instance of :ChemicalSynthesis.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a role realized in :ChemicalSynthesis; only :Role_V1 (borne by :Org_Vanguard_Works) is linked to :Act_404, which is an instance of :ChemicalSynthesis.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.89,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a role realized in :ChemicalSynthesis (Act_404). The graph facts show that :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, thereby classifying it as a :ManufacturerRole.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a role realized in :ChemicalSynthesis (Act_404). The graph facts show that :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404, thereby classifying it as a :ManufacturerRole.\",\n  \"matches\": [\n    \"Org_Vanguard_Works\"\n  ]\n}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.91,
+              "matches": [
+                "Org_Vanguard_Works"
+              ],
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ManufacturerRole as a SupplyChainRole realized in a :ChemicalSynthesis process. The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a :ChemicalSynthesis), while the other organizations are realized in TitleTransfer or CargoTransport.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ManufacturerRole as a SupplyChainRole realized in a :ChemicalSynthesis process. The graph facts show :Org_Vanguard_Works bears :Role_V1, which is realized in :Act_404 (a :ChemicalSynthesis), while the other organizations are realized in TitleTransfer or CargoTransport.\",\n  \"matches\": [\"Org_Vanguard_Works\"]\n}"
+            }
+          ]
+        },
+        "CQ2": {
+          "question": "Which inspected material(s) among `:Lot_FX204`, `:Unit_FX204_A`, and `:Batch_Lab09` fit `:ProductionBatch`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Lot_FX204"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 3.1,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as an :InspectedMaterial that is the output of a :ChemicalSynthesis process. The graph facts show :Lot_FX204 is the output of :Act_404 (a :ChemicalSynthesis), while :Unit_FX204_A is a :ForensicSpecimen and :Batch_Lab09 is an :AssayRunTray.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as an :InspectedMaterial that is the output of a :ChemicalSynthesis process. The graph facts show :Lot_FX204 is the output of :Act_404 (a :ChemicalSynthesis), while :Unit_FX204_A is a :ForensicSpecimen and :Batch_Lab09 is an :AssayRunTray.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 3.28,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Based on the ontology, :Lot_FX204 is classified as a :ProductionBatch because it is an :InspectedMaterial that is the :outputOf a :ChemicalSynthesis process (:Act_404). In contrast, :Unit_FX204_A is a :ForensicSpecimen (sampled from the batch) and :Batch_Lab09 is an :AssayRunTray (grouping specimens), both of which are explicitly disjoint from :ProductionBatch.",
+              "raw": "{\n  \"reason\": \"Based on the ontology, :Lot_FX204 is classified as a :ProductionBatch because it is an :InspectedMaterial that is the :outputOf a :ChemicalSynthesis process (:Act_404). In contrast, :Unit_FX204_A is a :ForensicSpecimen (sampled from the batch) and :Batch_Lab09 is an :AssayRunTray (grouping specimens), both of which are explicitly disjoint from :ProductionBatch.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 3.14,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as an inspected material that is the output of a :ChemicalSynthesis process. In the ABox, only :Lot_FX204 has the property :outputOf :Act_404 (a :ChemicalSynthesis instance), while :Unit_FX204_A is a :ForensicSpecimen and :Batch_Lab09 is an :AssayRunTray.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as an inspected material that is the output of a :ChemicalSynthesis process. In the ABox, only :Lot_FX204 has the property :outputOf :Act_404 (a :ChemicalSynthesis instance), while :Unit_FX204_A is a :ForensicSpecimen and :Batch_Lab09 is an :AssayRunTray.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 3.15,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Based on the ontology, :ProductionBatch is defined as an inspected material that is the output of a :ChemicalSynthesis process. The graph facts show that :Lot_FX204 has the property :outputOf :Act_404, which is a :ChemicalSynthesis instance, whereas :Unit_FX204_A is a :ForensicSpecimen and :Batch_Lab09 is an :AssayRunTray.",
+              "raw": "{\"reason\": \"Based on the ontology, :ProductionBatch is defined as an inspected material that is the output of a :ChemicalSynthesis process. The graph facts show that :Lot_FX204 has the property :outputOf :Act_404, which is a :ChemicalSynthesis instance, whereas :Unit_FX204_A is a :ForensicSpecimen and :Batch_Lab09 is an :AssayRunTray.\", \"matches\": [\"Lot_FX204\"]}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 3.23,
+              "matches": [
+                "Lot_FX204"
+              ],
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "The ontology defines :ProductionBatch as an InspectedMaterial output of a :ChemicalSynthesis process. The reasoner output explicitly classifies :Lot_FX204 as a :ProductionBatch because it has the :outputOf property linking to :Act_404 (a :ChemicalSynthesis instance), whereas :Unit_FX204_A and :Batch_Lab09 are classified as :ForensicSpecimen and :AssayRunTray respectively.",
+              "raw": "{\n  \"reason\": \"The ontology defines :ProductionBatch as an InspectedMaterial output of a :ChemicalSynthesis process. The reasoner output explicitly classifies :Lot_FX204 as a :ProductionBatch because it has the :outputOf property linking to :Act_404 (a :ChemicalSynthesis instance), whereas :Unit_FX204_A and :Batch_Lab09 are classified as :ForensicSpecimen and :AssayRunTray respectively.\",\n  \"matches\": [\"Lot_FX204\"]\n}"
+            }
+          ]
+        },
+        "CQ3": {
+          "question": "Which inspection record(s) among `:Record_88A` and `:Record_44B` fit `:SpectroscopyDatum`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.",
+          "expected": [
+            "Record_44B"
+          ],
+          "exact_count": 5,
+          "runs_count": 5,
+          "accuracy_pct": 100.0,
+          "runs": [
+            {
+              "run": 1,
+              "temp": 0.0,
+              "latency_s": 3.12,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as a SpectroscopyDatum because it is the output of the RamanAssay (Assay_77), matching the ontology's definition for that class. Record_88A is classified as a ShippingManifest because it is submitted by an Organization and lacks the required RamanAssay output property.",
+              "raw": "{\n  \"reason\": \"Record_44B is classified as a SpectroscopyDatum because it is the output of the RamanAssay (Assay_77), matching the ontology's definition for that class. Record_88A is classified as a ShippingManifest because it is submitted by an Organization and lacks the required RamanAssay output property.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 2,
+              "temp": 0.5,
+              "latency_s": 2.94,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as :SpectroscopyDatum because it has the property :outputOf :Assay_77, which is an instance of :RamanAssay, satisfying the equivalent class definition. Record_88A is classified as :ShippingManifest because it is :submittedBy an Organization, satisfying its specific definition and being disjoint from :SpectroscopyDatum.",
+              "raw": "{\"reason\": \"Record_44B is classified as :SpectroscopyDatum because it has the property :outputOf :Assay_77, which is an instance of :RamanAssay, satisfying the equivalent class definition. Record_88A is classified as :ShippingManifest because it is :submittedBy an Organization, satisfying its specific definition and being disjoint from :SpectroscopyDatum.\", \"matches\": [\"Record_44B\"]}"
+            },
+            {
+              "run": 3,
+              "temp": 0.5,
+              "latency_s": 2.91,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as a SpectroscopyDatum because it is the output of Assay_77 (a RamanAssay), satisfying the equivalent class definition. In contrast, Record_88A is classified as a ShippingManifest because it was submitted by Org_Helios_Supply and lacks the assay output property.",
+              "raw": "{\n  \"reason\": \"Record_44B is classified as a SpectroscopyDatum because it is the output of Assay_77 (a RamanAssay), satisfying the equivalent class definition. In contrast, Record_88A is classified as a ShippingManifest because it was submitted by Org_Helios_Supply and lacks the assay output property.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            },
+            {
+              "run": 4,
+              "temp": 0.5,
+              "latency_s": 2.85,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as :SpectroscopyDatum because it is defined as the output of :Assay_77 (a :RamanAssay), matching the ontology's equivalence axiom for that class. Record_88A is classified as :ShippingManifest because it is submitted by an organization, not generated as an assay output.",
+              "raw": "{\"reason\": \"Record_44B is classified as :SpectroscopyDatum because it is defined as the output of :Assay_77 (a :RamanAssay), matching the ontology's equivalence axiom for that class. Record_88A is classified as :ShippingManifest because it is submitted by an organization, not generated as an assay output.\", \"matches\": [\"Record_44B\"]}"
+            },
+            {
+              "run": 5,
+              "temp": 0.5,
+              "latency_s": 2.88,
+              "matches": [
+                "Record_44B"
+              ],
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_match": true,
+              "false_positives": [],
+              "reason": "Record_44B is classified as a SpectroscopyDatum because it is the outputOf the RamanAssay instance Assay_77, matching the definition and disjoint constraints. Record_88A is classified as a ShippingManifest because it is submittedBy an Organization and lacks the required RamanAssay output link.",
+              "raw": "{\n  \"reason\": \"Record_44B is classified as a SpectroscopyDatum because it is the outputOf the RamanAssay instance Assay_77, matching the definition and disjoint constraints. Record_88A is classified as a ShippingManifest because it is submittedBy an Organization and lacks the required RamanAssay output link.\",\n  \"matches\": [\"Record_44B\"]\n}"
+            }
+          ]
+        }
+      },
+      "total_exact": 15,
+      "total_runs": 15,
+      "accuracy_pct": 100.0
+    }
+  }
+}

@@ -1,0 +1,9 @@
+SYSTEM PROMPT (Reason-First RAG Mode):
+You are an enterprise knowledge-graph assistant answering competency questions from an RDF/OWL Turtle file. Reason briefly over the provided ontology, definitions, and facts, then return ONLY valid JSON with keys in this exact order: {"reason": "1-2 short sentences explaining your classification", "matches": ["EntityLocalId", ...]}. Use bare entity local IDs without colons (e.g., "Org_Vanguard_Works", "Lot_FX204", "Record_44B").
+
+COMPETENCY QUESTIONS:
+- CQ1: Which organization(s) among `:Org_Helios_Supply`, `:Org_Vanguard_Works`, and `:Org_Meridian_Freight` fit `:ManufacturerRole` via their borne role? Use the provided ontology definitions, axioms, and graph facts to classify the entities.
+- CQ2: Which inspected material(s) among `:Lot_FX204`, `:Unit_FX204_A`, and `:Batch_Lab09` fit `:ProductionBatch`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.
+- CQ3: Which inspection record(s) among `:Record_88A` and `:Record_44B` fit `:SpectroscopyDatum`? Use the provided ontology definitions, axioms, and graph facts to classify the entities.
+
+(In Condition 1B masked-ID ablation, target classes become :CLASS_02, :CLASS_06, and :CLASS_11.)

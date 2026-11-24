@@ -1,0 +1,242 @@
+{
+  "variants": {
+    "01_bare_no_defs_no_axioms.ttl": {
+      "consistent": true,
+      "disjoint_clashes": [],
+      "cq_before_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": []
+      },
+      "cq_after_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": []
+      },
+      "inferred_types": {
+        "Role_H1": [
+          "SupplyChainRole"
+        ],
+        "Role_V1": [
+          "SupplyChainRole"
+        ],
+        "Role_M1": [
+          "SupplyChainRole"
+        ],
+        "Lot_FX204": [
+          "InspectedMaterial"
+        ],
+        "Unit_FX204_A": [
+          "InspectedMaterial"
+        ],
+        "Batch_Lab09": [
+          "InspectedMaterial"
+        ],
+        "Record_88A": [
+          "InspectionRecord"
+        ],
+        "Record_44B": [
+          "InspectionRecord"
+        ]
+      }
+    },
+    "02a_sloppy_defs_no_axioms.ttl": {
+      "consistent": true,
+      "disjoint_clashes": [],
+      "cq_before_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": []
+      },
+      "cq_after_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": []
+      },
+      "inferred_types": {
+        "Role_H1": [
+          "SupplyChainRole"
+        ],
+        "Role_V1": [
+          "SupplyChainRole"
+        ],
+        "Role_M1": [
+          "SupplyChainRole"
+        ],
+        "Lot_FX204": [
+          "InspectedMaterial"
+        ],
+        "Unit_FX204_A": [
+          "InspectedMaterial"
+        ],
+        "Batch_Lab09": [
+          "InspectedMaterial"
+        ],
+        "Record_88A": [
+          "InspectionRecord"
+        ],
+        "Record_44B": [
+          "InspectionRecord"
+        ]
+      }
+    },
+    "02b_strict_defs_no_axioms.ttl": {
+      "consistent": true,
+      "disjoint_clashes": [],
+      "cq_before_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": []
+      },
+      "cq_after_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": []
+      },
+      "inferred_types": {
+        "Role_H1": [
+          "SupplyChainRole"
+        ],
+        "Role_V1": [
+          "SupplyChainRole"
+        ],
+        "Role_M1": [
+          "SupplyChainRole"
+        ],
+        "Lot_FX204": [
+          "InspectedMaterial"
+        ],
+        "Unit_FX204_A": [
+          "InspectedMaterial"
+        ],
+        "Batch_Lab09": [
+          "InspectedMaterial"
+        ],
+        "Record_88A": [
+          "InspectionRecord"
+        ],
+        "Record_44B": [
+          "InspectionRecord"
+        ]
+      }
+    },
+    "03_full_bfo_axioms_and_strict_defs.ttl": {
+      "consistent": true,
+      "disjoint_clashes": [],
+      "cq_before_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": []
+      },
+      "cq_after_inference": {
+        "CQ1": [
+          "Org_Vanguard_Works"
+        ],
+        "CQ2": [
+          "Lot_FX204"
+        ],
+        "CQ3": [
+          "Record_44B"
+        ]
+      },
+      "inferred_types": {
+        "Role_H1": [
+          "BrokerRole",
+          "SupplyChainRole"
+        ],
+        "Role_V1": [
+          "ManufacturerRole",
+          "SupplyChainRole"
+        ],
+        "Role_M1": [
+          "CarrierRole",
+          "SupplyChainRole"
+        ],
+        "Lot_FX204": [
+          "InspectedMaterial",
+          "ProductionBatch"
+        ],
+        "Unit_FX204_A": [
+          "ForensicSpecimen",
+          "InspectedMaterial"
+        ],
+        "Batch_Lab09": [
+          "AssayRunTray",
+          "InspectedMaterial"
+        ],
+        "Record_88A": [
+          "InspectionRecord",
+          "ShippingManifest"
+        ],
+        "Record_44B": [
+          "InspectionRecord",
+          "SpectroscopyDatum"
+        ]
+      }
+    },
+    "04_clash_manifest_as_spectroscopy.ttl": {
+      "consistent": false,
+      "disjoint_clashes": [
+        {
+          "individual": "Record_88A",
+          "class_a": "ShippingManifest",
+          "class_b": "SpectroscopyDatum"
+        }
+      ],
+      "cq_before_inference": {
+        "CQ1": [],
+        "CQ2": [],
+        "CQ3": [
+          "Record_88A"
+        ]
+      },
+      "cq_after_inference": {
+        "CQ1": [
+          "Org_Vanguard_Works"
+        ],
+        "CQ2": [
+          "Lot_FX204"
+        ],
+        "CQ3": [
+          "Record_44B",
+          "Record_88A"
+        ]
+      },
+      "inferred_types": {
+        "Role_H1": [
+          "BrokerRole",
+          "SupplyChainRole"
+        ],
+        "Role_V1": [
+          "ManufacturerRole",
+          "SupplyChainRole"
+        ],
+        "Role_M1": [
+          "CarrierRole",
+          "SupplyChainRole"
+        ],
+        "Lot_FX204": [
+          "InspectedMaterial",
+          "ProductionBatch"
+        ],
+        "Unit_FX204_A": [
+          "ForensicSpecimen",
+          "InspectedMaterial"
+        ],
+        "Batch_Lab09": [
+          "AssayRunTray",
+          "InspectedMaterial"
+        ],
+        "Record_88A": [
+          "InspectionRecord",
+          "ShippingManifest",
+          "SpectroscopyDatum"
+        ],
+        "Record_44B": [
+          "InspectionRecord",
+          "SpectroscopyDatum"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2874 @@
+{
+  "models": {
+    "Qwen3.5-35B-A3B-4bit": {
+      "conditions": {
+        "1A_bare_labels_only": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 4.01,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines ManufacturerRole as a subclass of SupplyChainRole, but no individual is explicitly typed as ManufacturerRole, nor is there any axiom linking the existing roles (Role_H1, Role_V1, Role_M1) to ManufacturerRole.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines ManufacturerRole as a subclass of SupplyChainRole, but no individual is explicitly typed as ManufacturerRole, nor is there any axiom linking the existing roles (Role_H1, Role_V1, Role_M1) to ManufacturerRole.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 2.23,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No organization bears a role explicitly typed as ManufacturerRole; the existing roles (Role_H1, Role_V1, Role_M1) are only instances of SupplyChainRole.",
+                  "raw": "{\"matches\": [], \"reason\": \"No organization bears a role explicitly typed as ManufacturerRole; the existing roles (Role_H1, Role_V1, Role_M1) are only instances of SupplyChainRole.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.51,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines ManufacturerRole but contains no facts asserting that any Organization bears this specific role, only that they bear the generic SupplyChainRole.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines ManufacturerRole but contains no facts asserting that any Organization bears this specific role, only that they bear the generic SupplyChainRole.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.51,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines ManufacturerRole as a subclass of SupplyChainRole, but no fact in the ABox asserts that any Organization bears the ManufacturerRole specifically.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines ManufacturerRole as a subclass of SupplyChainRole, but no fact in the ABox asserts that any Organization bears the ManufacturerRole specifically.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.62,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any of the listed roles (:Role_H1, :Role_V1, :Role_M1) are instances of :ManufacturerRole, so no organizations qualify.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any of the listed roles (:Role_H1, :Role_V1, :Role_M1) are instances of :ManufacturerRole, so no organizations qualify.\"}"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.44,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.44,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.67,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "None of the listed inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) are explicitly typed as instances of the :ProductionBatch class in the provided facts.",
+                  "raw": "{\"matches\": [], \"reason\": \"None of the listed inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) are explicitly typed as instances of the :ProductionBatch class in the provided facts.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.67,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but no individual entities are explicitly typed as :ProductionBatch, nor is there any logical axiom allowing the inference of such a type from the given facts.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but no individual entities are explicitly typed as :ProductionBatch, nor is there any logical axiom allowing the inference of such a type from the given facts.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.52,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No entity is explicitly typed as :ProductionBatch, nor does the provided data establish that the listed materials are instances of that class.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"No entity is explicitly typed as :ProductionBatch, nor does the provided data establish that the listed materials are instances of that class.\"\n}"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.67,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided facts do not assert that Record_88A or Record_44B are instances of the class :SpectroscopyDatum, only that they are instances of :InspectionRecord.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The provided facts do not assert that Record_88A or Record_44B are instances of the class :SpectroscopyDatum, only that they are instances of :InspectionRecord.\"\n}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.82,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, but no individuals in the data are explicitly typed as :SpectroscopyDatum; :Record_44B is an instance of :InspectionRecord but not declared as :SpectroscopyDatum.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, but no individuals in the data are explicitly typed as :SpectroscopyDatum; :Record_44B is an instance of :InspectionRecord but not declared as :SpectroscopyDatum.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.72,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, but the ABox facts do not assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, but the ABox facts do not assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.58,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided facts do not assert that Record_88A or Record_44B are instances of the class :SpectroscopyDatum.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The provided facts do not assert that Record_88A or Record_44B are instances of the class :SpectroscopyDatum.\"\n}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.55,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No inspection record in the provided facts is explicitly typed as the class :SpectroscopyDatum, which is required to qualify.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"No inspection record in the provided facts is explicitly typed as the class :SpectroscopyDatum, which is required to qualify.\"\n}"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        },
+        "1B_bare_masked_ids": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:CLASS_02` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.51,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any organization bears a role that is a subclass of :CLASS_02.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any organization bears a role that is a subclass of :CLASS_02.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.72,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts define :CLASS_02 as a subclass of :CLASS_01 but contain no instances of :CLASS_02 or any assertions linking the listed organizations to :CLASS_02.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts define :CLASS_02 as a subclass of :CLASS_01 but contain no instances of :CLASS_02 or any assertions linking the listed organizations to :CLASS_02.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.75,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No organization bears a role that is explicitly declared as a subclass of :CLASS_02 in the provided facts; :Role_H1, :Role_V1, and :Role_M1 are only declared as instances of :CLASS_01.",
+                  "raw": "{\"matches\": [], \"reason\": \"No organization bears a role that is explicitly declared as a subclass of :CLASS_02 in the provided facts; :Role_H1, :Role_V1, and :Role_M1 are only declared as instances of :CLASS_01.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.51,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any organization bears a role that is an instance of or subclass of :CLASS_02.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any organization bears a role that is an instance of or subclass of :CLASS_02.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.77,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No organization is stated to bear a role that is a subclass of :CLASS_02, as the ontology only defines :CLASS_02 as a subclass of :CLASS_01 without asserting any individuals of :CLASS_02 or linking organizations to it.",
+                  "raw": "{\"matches\": [], \"reason\": \"No organization is stated to bear a role that is a subclass of :CLASS_02, as the ontology only defines :CLASS_02 as a subclass of :CLASS_01 without asserting any individuals of :CLASS_02 or linking organizations to it.\"}"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:CLASS_06` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.57,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but no individuals are explicitly asserted to be instances of :CLASS_06.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but no individuals are explicitly asserted to be instances of :CLASS_06.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.84,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but no facts assert that any individual entity (Lot_FX204, Unit_FX204_A, or Batch_Lab09) is an instance of :CLASS_06.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but no facts assert that any individual entity (Lot_FX204, Unit_FX204_A, or Batch_Lab09) is an instance of :CLASS_06.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.59,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but no named individuals are explicitly asserted to be instances of :CLASS_06.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05, but no named individuals are explicitly asserted to be instances of :CLASS_06.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.64,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05 but does not list any named individuals or axioms that assert any entity is an instance of :CLASS_06.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05 but does not list any named individuals or axioms that assert any entity is an instance of :CLASS_06.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.93,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :CLASS_06 as a subclass of :CLASS_05 but contains no facts, axioms, or rules asserting that any specific individual instance (including :Lot_FX204, :Unit_FX204_A, or :Batch_Lab09) is an instance of :CLASS_06.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :CLASS_06 as a subclass of :CLASS_05 but contains no facts, axioms, or rules asserting that any specific individual instance (including :Lot_FX204, :Unit_FX204_A, or :Batch_Lab09) is an instance of :CLASS_06.\"}"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:CLASS_11` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.74,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09, but no axioms or facts in the provided text assert that :Record_88A or :Record_44B are instances of :CLASS_11.",
+                  "raw": "{\"matches\": [], \"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09, but no axioms or facts in the provided text assert that :Record_88A or :Record_44B are instances of :CLASS_11.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.77,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09, but provides no axioms or facts linking the specific individuals :Record_88A or :Record_44B to :CLASS_11.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09, but provides no axioms or facts linking the specific individuals :Record_88A or :Record_44B to :CLASS_11.\"\n}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.76,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09, but no axioms or facts in the provided graph explicitly state that :Record_88A or :Record_44B are instances of :CLASS_11.",
+                  "raw": "{\"matches\": [], \"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09, but no axioms or facts in the provided graph explicitly state that :Record_88A or :Record_44B are instances of :CLASS_11.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.47,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No individuals in the provided ontology are explicitly typed as :CLASS_11, so no entities can be identified as qualifying.",
+                  "raw": "{\"matches\": [], \"reason\": \"No individuals in the provided ontology are explicitly typed as :CLASS_11, so no entities can be identified as qualifying.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.74,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :CLASS_11 as a subclass of :CLASS_09, but no facts state that :Record_88A or :Record_44B are instances of :CLASS_11.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The ontology defines :CLASS_11 as a subclass of :CLASS_09, but no facts state that :Record_88A or :Record_44B are instances of :CLASS_11.\"\n}"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        },
+        "2A_sloppy_defs_only": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.84,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox facts do not assert that any of the listed organizations bear the specific class :ManufacturerRole; they only bear the generic :SupplyChainRole.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox facts do not assert that any of the listed organizations bear the specific class :ManufacturerRole; they only bear the generic :SupplyChainRole.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.67,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No organization is explicitly typed as bearing a :ManufacturerRole instance; all listed roles are typed as :SupplyChainRole without subclass assertions to :ManufacturerRole.",
+                  "raw": "{\"matches\": [], \"reason\": \"No organization is explicitly typed as bearing a :ManufacturerRole instance; all listed roles are typed as :SupplyChainRole without subclass assertions to :ManufacturerRole.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.87,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox facts do not assert that any of the listed organizations bear the specific class :ManufacturerRole; they only bear the generic :SupplyChainRole.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the ABox facts do not assert that any of the listed organizations bear the specific class :ManufacturerRole; they only bear the generic :SupplyChainRole.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.77,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided facts do not assert that any organization bears the specific class :ManufacturerRole, only that they bear generic :SupplyChainRole instances.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The provided facts do not assert that any organization bears the specific class :ManufacturerRole, only that they bear generic :SupplyChainRole instances.\"\n}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 2.03,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the provided facts do not assert that any of the listed organizations bear the specific :ManufacturerRole class, only that they bear generic :SupplyChainRole instances.",
+                  "raw": "{\"matches\": [], \"reason\": \"The ontology defines :ManufacturerRole as a subclass of :SupplyChainRole, but the provided facts do not assert that any of the listed organizations bear the specific :ManufacturerRole class, only that they bear generic :SupplyChainRole instances.\"}"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.76,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 2.05,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "Although the ontology defines :ProductionBatch as a subclass of :InspectedMaterial, the provided facts do not assert that :Lot_FX204, :Unit_FX204_A, or :Batch_Lab09 are instances of :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"Although the ontology defines :ProductionBatch as a subclass of :InspectedMaterial, the provided facts do not assert that :Lot_FX204, :Unit_FX204_A, or :Batch_Lab09 are instances of :ProductionBatch.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.7,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.94,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "None of the listed inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) are explicitly typed as :ProductionBatch in the provided facts.",
+                  "raw": "{\"matches\": [], \"reason\": \"None of the listed inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) are explicitly typed as :ProductionBatch in the provided facts.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.85,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but no individuals in the ABox are explicitly typed as or inferred to be instances of :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but no individuals in the ABox are explicitly typed as or inferred to be instances of :ProductionBatch.\"}"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.94,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided facts do not assert that Record_88A or Record_44B are instances of the class :SpectroscopyDatum, only that they are instances of :InspectionRecord.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The provided facts do not assert that Record_88A or Record_44B are instances of the class :SpectroscopyDatum, only that they are instances of :InspectionRecord.\"\n}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.88,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided facts do not assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum, nor do they possess the necessary properties to infer this classification.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided facts do not assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum, nor do they possess the necessary properties to infer this classification.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 2.03,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, but the ABox facts do not explicitly assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The provided ontology defines :SpectroscopyDatum as a subclass of :InspectionRecord, but the ABox facts do not explicitly assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum.\"\n}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.91,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines :SpectroscopyDatum as a class, but the ABox facts do not assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines :SpectroscopyDatum as a class, but the ABox facts do not assert that :Record_88A or :Record_44B are instances of :SpectroscopyDatum.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.92,
+                  "matches": [],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided facts do not state that Record_88A or Record_44B are instances of the class :SpectroscopyDatum, only that they are instances of :InspectionRecord.",
+                  "raw": "{\n  \"matches\": [],\n  \"reason\": \"The provided facts do not state that Record_88A or Record_44B are instances of the class :SpectroscopyDatum, only that they are instances of :InspectionRecord.\"\n}"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        },
+        "2B_strict_defs_only": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 4,
+              "runs_count": 5,
+              "accuracy_pct": 80.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.98,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is realized in ChemicalSynthesis (Act_404), satisfying the definition of ManufacturerRole.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is realized in ChemicalSynthesis (Act_404), satisfying the definition of ManufacturerRole.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.95,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Org_Vanguard_Works bears Role_V1 which is realized in Act_404 (ChemicalSynthesis), satisfying the definition of ManufacturerRole.",
+                  "raw": "{\n  \"matches\": [\n    \"Org_Vanguard_Works\"\n  ],\n  \"reason\": \"Org_Vanguard_Works bears Role_V1 which is realized in Act_404 (ChemicalSynthesis), satisfying the definition of ManufacturerRole.\"\n}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.77,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is realized in ChemicalSynthesis, the defining process for ManufacturerRole.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is realized in ChemicalSynthesis, the defining process for ManufacturerRole.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.88,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (ChemicalSynthesis), satisfying the definition of ManufacturerRole.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is realized in Act_404 (ChemicalSynthesis), satisfying the definition of ManufacturerRole.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 2.03,
+                  "matches": [],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology defines ManufacturerRole as a subclass of SupplyChainRole, but the ABox facts only assert that the organizations bear the generic SupplyChainRole without explicitly classifying them as ManufacturerRole or linking them to a ChemicalSynthesis process via that specific role.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology defines ManufacturerRole as a subclass of SupplyChainRole, but the ABox facts only assert that the organizations bear the generic SupplyChainRole without explicitly classifying them as ManufacturerRole or linking them to a ChemicalSynthesis process via that specific role.\"}"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.71,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any of the listed inspected materials are instances of the class :ProductionBatch.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 1.81,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but no individual in the provided ABox is explicitly typed as or inferred to be a :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but no individual in the provided ABox is explicitly typed as or inferred to be a :ProductionBatch.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.89,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "None of the inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) are explicitly typed as instances of :ProductionBatch in the provided facts.",
+                  "raw": "{\"matches\": [], \"reason\": \"None of the inspected materials (:Lot_FX204, :Unit_FX204_A, :Batch_Lab09) are explicitly typed as instances of :ProductionBatch in the provided facts.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 1.65,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The provided ontology and facts do not assert that any of the listed inspected materials are instances of :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The provided ontology and facts do not assert that any of the listed inspected materials are instances of :ProductionBatch.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 2.16,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided facts only assert that :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 are instances of :InspectedMaterial, with no explicit assertion classifying any of them as :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"The ontology defines :ProductionBatch as a subclass of :InspectedMaterial, but the provided facts only assert that :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 are instances of :InspectedMaterial, with no explicit assertion classifying any of them as :ProductionBatch.\"}"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 5,
+              "runs_count": 5,
+              "accuracy_pct": 100.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 1.95,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as an instance of :SpectroscopyDatum via its outputOf relationship to :Assay_77, whereas Record_88A lacks this specific type assertion.",
+                  "raw": "{\"matches\": [\":Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as an instance of :SpectroscopyDatum via its outputOf relationship to :Assay_77, whereas Record_88A lacks this specific type assertion.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 2.05,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only :Record_44B has the property :outputOf :Assay_77 (a :RamanAssay instance), satisfying the subclass definition of :SpectroscopyDatum, whereas :Record_88A lacks this property.",
+                  "raw": "{\"matches\": [\":Record_44B\"], \"reason\": \"Only :Record_44B has the property :outputOf :Assay_77 (a :RamanAssay instance), satisfying the subclass definition of :SpectroscopyDatum, whereas :Record_88A lacks this property.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 1.96,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as an instance of :SpectroscopyDatum via its class declaration and its :outputOf relationship to the :RamanAssay instance :Assay_77.",
+                  "raw": "{\"matches\": [\":Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as an instance of :SpectroscopyDatum via its class declaration and its :outputOf relationship to the :RamanAssay instance :Assay_77.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 2.13,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as an instance of the class :SpectroscopyDatum (or its subclass) and linked to a :RamanAssay via the :outputOf property, whereas Record_88A is only typed as :InspectionRecord.",
+                  "raw": "{\"matches\": [\":Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as an instance of the class :SpectroscopyDatum (or its subclass) and linked to a :RamanAssay via the :outputOf property, whereas Record_88A is only typed as :InspectionRecord.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 1.84,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as an instance of the class :SpectroscopyDatum via its relationship to a :RamanAssay output.",
+                  "raw": "{\"matches\": [\":Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as an instance of the class :SpectroscopyDatum via its relationship to a :RamanAssay output.\"}"
+                }
+              ]
+            }
+          },
+          "total_exact": 9,
+          "total_runs": 15,
+          "accuracy_pct": 60.0
+        },
+        "3_reasoner_plus_strict": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 5,
+              "runs_count": 5,
+              "accuracy_pct": 100.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 2.38,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 2.39,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 2.41,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 2.48,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is explicitly typed as :ManufacturerRole in the reasoner output.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 2.44,
+                  "matches": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Org_Vanguard_Works bears Role_V1, which is materialized as ManufacturerRole via realization of ChemicalSynthesis.",
+                  "raw": "{\"matches\": [\"Org_Vanguard_Works\"], \"reason\": \"Only Org_Vanguard_Works bears Role_V1, which is materialized as ManufacturerRole via realization of ChemicalSynthesis.\"}"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 2.67,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "Only :Lot_FX204 is explicitly typed as :ProductionBatch in the reasoner output, whereas :Unit_FX204_A is typed as :ForensicSpecimen and :Batch_Lab09 is typed as :AssayRunTray.",
+                  "raw": "{\"matches\": [], \"reason\": \"Only :Lot_FX204 is explicitly typed as :ProductionBatch in the reasoner output, whereas :Unit_FX204_A is typed as :ForensicSpecimen and :Batch_Lab09 is typed as :AssayRunTray.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 2.8,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No inspected material in the provided facts is classified as :ProductionBatch, as :Lot_FX204 is the only entity with the :ProductionBatch type, while :Unit_FX204_A and :Batch_Lab09 are typed as :ForensicSpecimen and :AssayRunTray respectively.",
+                  "raw": "{\"matches\": [], \"reason\": \"No inspected material in the provided facts is classified as :ProductionBatch, as :Lot_FX204 is the only entity with the :ProductionBatch type, while :Unit_FX204_A and :Batch_Lab09 are typed as :ForensicSpecimen and :AssayRunTray respectively.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 2.65,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "Only Lot_FX204 is explicitly typed as :ProductionBatch in the reasoner output; Unit_FX204_A and Batch_Lab09 are typed as :ForensicSpecimen and :AssayRunTray respectively, which are disjoint from :ProductionBatch.",
+                  "raw": "{\"matches\": [], \"reason\": \"Only Lot_FX204 is explicitly typed as :ProductionBatch in the reasoner output; Unit_FX204_A and Batch_Lab09 are typed as :ForensicSpecimen and :AssayRunTray respectively, which are disjoint from :ProductionBatch.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 2.64,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "No inspected material in the provided facts is explicitly typed as :ProductionBatch; only :Lot_FX204 is typed as :ProductionBatch, while :Unit_FX204_A is :ForensicSpecimen and :Batch_Lab09 is :AssayRunTray.",
+                  "raw": "{\"matches\": [], \"reason\": \"No inspected material in the provided facts is explicitly typed as :ProductionBatch; only :Lot_FX204 is typed as :ProductionBatch, while :Unit_FX204_A is :ForensicSpecimen and :Batch_Lab09 is :AssayRunTray.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 2.78,
+                  "matches": [],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [],
+                  "reason": "The ontology defines :ProductionBatch as an intersection of :InspectedMaterial and output of :ChemicalSynthesis, but the provided reasoner materialization explicitly classifies only :Lot_FX204 as :ProductionBatch, while :Unit_FX204_A is :ForensicSpecimen and :Batch_Lab09 is :AssayRunTray.",
+                  "raw": "{\"matches\": [], \"reason\": \"The ontology defines :ProductionBatch as an intersection of :InspectedMaterial and output of :ChemicalSynthesis, but the provided reasoner materialization explicitly classifies only :Lot_FX204 as :ProductionBatch, while :Unit_FX204_A is :ForensicSpecimen and :Batch_Lab09 is :AssayRunTray.\"}"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 5,
+              "runs_count": 5,
+              "accuracy_pct": 100.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 2.49,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as :SpectroscopyDatum and has :outputOf :Assay_77, which is a :RamanAssay.",
+                  "raw": "{\"matches\": [\"Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as :SpectroscopyDatum and has :outputOf :Assay_77, which is a :RamanAssay.\"}"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 2.42,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as a SpectroscopyDatum in the reasoner output and has an outputOf relationship to a RamanAssay instance.",
+                  "raw": "{\"matches\": [\"Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as a SpectroscopyDatum in the reasoner output and has an outputOf relationship to a RamanAssay instance.\"}"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 2.34,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as a SpectroscopyDatum in the reasoner output and linked to a RamanAssay.",
+                  "raw": "{\"matches\": [\"Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as a SpectroscopyDatum in the reasoner output and linked to a RamanAssay.\"}"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 2.41,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Only Record_44B is explicitly typed as SpectroscopyDatum and output of RamanAssay, while Record_88A is typed as ShippingManifest.",
+                  "raw": "{\"matches\": [\"Record_44B\"], \"reason\": \"Only Record_44B is explicitly typed as SpectroscopyDatum and output of RamanAssay, while Record_88A is typed as ShippingManifest.\"}"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 2.49,
+                  "matches": [
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": true,
+                  "false_positives": [],
+                  "reason": "Record_44B is explicitly typed as :SpectroscopyDatum and has :outputOf :Assay_77, whereas :Record_88A is typed as :ShippingManifest.",
+                  "raw": "{\"matches\": [\"Record_44B\"], \"reason\": \"Record_44B is explicitly typed as :SpectroscopyDatum and has :outputOf :Assay_77, whereas :Record_88A is typed as :ShippingManifest.\"}"
+                }
+              ]
+            }
+          },
+          "total_exact": 10,
+          "total_runs": 15,
+          "accuracy_pct": 66.7
+        }
+      }
+    },
+    "Qwen3-0.6B-4bit": {
+      "conditions": {
+        "1A_bare_labels_only": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.68,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies these organizations as :Organization entities, and their roles (ManufacturerRole) are explicitly defined in the ontological definitions.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology identifies these organizations as :Organization entities, and their roles (ManufacturerRole) are explicitly defined in the ontological definitions.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.4,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies these organizations as having the `:ManufacturerRole` as their borne role.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology identifies these organizations as having the `:ManufacturerRole` as their borne role.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.37,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies these organizations as qualified for the :ManufacturerRole role.",
+                  "raw": "```json\n{\"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"], \"reason\": \"The provided ontology identifies these organizations as qualified for the :ManufacturerRole role.\"}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.43,
+                  "matches": [
+                    "Org_Helios_Supply",
+                    "Org_Vanguard_Works",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology and facts identify these organizations as those whose borne role (ManufacturerRole) is explicitly linked to the concept.",
+                  "raw": "```json\n{\n  \"matches\": [\n    \"Org_Helios_Supply\",\n    \"Org_Vanguard_Works\",\n    \"Org_Meridian_Freight\"\n  ],\n  \"reason\": \"The provided ontology and facts identify these organizations as those whose borne role (ManufacturerRole) is explicitly linked to the concept.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.54,
+                  "matches": [
+                    "Org_Helios_Supply",
+                    "Org_Vanguard_Works",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology and facts identify the three organizations: Helios Chemical Supply Ltd (Org_Helios_Supply), Vanguard Precision Works (Org_Vanguard_Works), and Meridian Freight Lines (Org_Meridian_Freight). Their roles 'ManufacturerRole' are explicitly labeled in the ontological framework.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Helios_Supply\", \"Org_Vanguard_Works\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology and facts identify the three organizations: Helios Chemical Supply Ltd (Org_Helios_Supply), Vanguard Precision Works (Org_Vanguard_Works), and Meridian Freight Lines (Org_Meridian_Freight). Their roles 'ManufacturerRole' are explicitly labeled in the ontological framework.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.6,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials listed in the list (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as ProductionBatches in the provided ontology.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials listed in the list (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as ProductionBatches in the provided ontology.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.38,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All listed entities qualify as ProductionBatches based on the ontological definitions and the consignment facts provided.",
+                  "raw": "```json\n{\"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"], \"reason\": \"All listed entities qualify as ProductionBatches based on the ontological definitions and the consignment facts provided.\"}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.46,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All three inspected materials (Lot_FX204, Unit_FX204_A, and Batch_Lab09) are explicitly marked as ProductionBatch in the ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All three inspected materials (Lot_FX204, Unit_FX204_A, and Batch_Lab09) are explicitly marked as ProductionBatch in the ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.38,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials listed in the list qualify as ProductionBatch as per the provided ontology and consignment facts.",
+                  "raw": "```json\n{\"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"], \"reason\": \"All inspected materials listed in the list qualify as ProductionBatch as per the provided ontology and consignment facts.\"}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.46,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatch as per the ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatch as per the ontology and consignment facts.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.42,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` based on the provided ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.42,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both :Record_88A and :Record_44B refer to spectroscopy data (e.g., peak composition measurements) that qualify as :SpectroscopyDatum.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both :Record_88A and :Record_44B refer to spectroscopy data (e.g., peak composition measurements) that qualify as :SpectroscopyDatum.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.43,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` refer to `SpectroscopyDatum` as defined in the ontology, and they are explicitly listed as such in the provided facts.",
+                  "raw": "```json\n{\"matches\": [\"Record_88A\", \"Record_44B\"], \"reason\": \"Both `Record_88A` and `Record_44B` refer to `SpectroscopyDatum` as defined in the ontology, and they are explicitly listed as such in the provided facts.\"}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.42,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` based on the provided ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.42,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\"matches\": [\"Record_88A\", \"Record_44B\"], \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.\"}\n```"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        },
+        "1B_bare_masked_ids": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:CLASS_02` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.51,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The :Organization entities are identified as :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight, each of which is associated with a role that qualifies as :CLASS_02.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The :Organization entities are identified as :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight, each of which is associated with a role that qualifies as :CLASS_02.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.41,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The :Organization entities are matched with :CLASS_02 as their borne roles in the provided ontological definitions and facts.",
+                  "raw": "```json\n{\"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"], \"reason\": \"The :Organization entities are matched with :CLASS_02 as their borne roles in the provided ontological definitions and facts.\"}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.4,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The :Organization entities are defined in the ontology and their roles are explicitly labeled as :CLASS_02.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The :Organization entities are defined in the ontology and their roles are explicitly labeled as :CLASS_02.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.47,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "Each of these organizations (Org_Vanguard_Works and Org_Helios_Supply) has a role that qualifies as :CLASS_02 based on the provided ontological definitions and consignment facts.",
+                  "raw": "```json\n{\"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"], \"reason\": \"Each of these organizations (Org_Vanguard_Works and Org_Helios_Supply) has a role that qualifies as :CLASS_02 based on the provided ontological definitions and consignment facts.\"}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.48,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The :Organization entities :Org_Vanguard_Works and :Org_Helios_Supply have roles that qualify as :CLASS_02 based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The :Organization entities :Org_Vanguard_Works and :Org_Helios_Supply have roles that qualify as :CLASS_02 based on the provided ontology and consignment facts.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:CLASS_06` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.47,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) qualify as CLASS_06 based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) qualify as CLASS_06 based on the provided ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.48,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials that qualify as :CLASS_06 are :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09.",
+                  "raw": "```json\n{\n  \"matches\": [\n    \"Lot_FX204\",\n    \"Unit_FX204_A\",\n    \"Batch_Lab09\"\n  ],\n  \"reason\": \"All inspected materials that qualify as :CLASS_06 are :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.44,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials listed in the ontology are classified as :CLASS_06, as they are explicitly defined as such in the ontological definitions.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials listed in the ontology are classified as :CLASS_06, as they are explicitly defined as such in the ontological definitions.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.48,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "The provided ontology and facts identify that :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 are classified under :CLASS_06.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"The provided ontology and facts identify that :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 are classified under :CLASS_06.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.49,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All listed entities (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified under :CLASS_06 based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All listed entities (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified under :CLASS_06 based on the provided ontology and consignment facts.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:CLASS_11` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.41,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` qualify as `CLASS_11` inspection records based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` qualify as `CLASS_11` inspection records based on the provided ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.44,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `:Record_88A` and `:Record_44B` qualify as `:CLASS_11` due to their specific inspection records and the provided ontological definitions.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `:Record_88A` and `:Record_44B` qualify as `:CLASS_11` due to their specific inspection records and the provided ontological definitions.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.44,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `:Record_88A` and `:Record_44B` qualify as `:CLASS_11` as they are related to inspection records with specific comments and comments about the inspection process.",
+                  "raw": "```json\n{\"matches\": [\"Record_88A\", \"Record_44B\"], \"reason\": \"Both `:Record_88A` and `:Record_44B` qualify as `:CLASS_11` as they are related to inspection records with specific comments and comments about the inspection process.\"}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.42,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` qualify as `CLASS_11` inspection records based on the ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` qualify as `CLASS_11` inspection records based on the ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.41,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` refer to inspection records that qualify as `CLASS_11` in the provided ontology.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` refer to inspection records that qualify as `CLASS_11` in the provided ontology.\"\n}\n```"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        },
+        "2A_sloppy_defs_only": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.44,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies these organizations as having the `ManufacturerRole` as their borne role, as specified in the ontological definitions.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology identifies these organizations as having the `ManufacturerRole` as their borne role, as specified in the ontological definitions.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.55,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Vanguard_Works"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply"
+                  ],
+                  "reason": "The provided ontology identifies :Org_Helios_Supply as a manufacturer (Role_V1) and :Org_Vanguard_Works as a manufacturer (Role_V1). The facts confirm these roles as part of the supplied data.",
+                  "raw": "```json\n{\n  \"matches\": [\n    \"Org_Vanguard_Works\",\n    \"Org_Helios_Supply\",\n    \"Org_Vanguard_Works\"\n  ],\n  \"reason\": \"The provided ontology identifies :Org_Helios_Supply as a manufacturer (Role_V1) and :Org_Vanguard_Works as a manufacturer (Role_V1). The facts confirm these roles as part of the supplied data.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.56,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology and facts identify that Org_Vanguard_Works and Org_Helios_Supply have roles as `ManufacturerRole` in their respective borne roles. Org_Meridian_Freight is also labeled as a `ManufacturerRole` in the ontological definitions.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology and facts identify that Org_Vanguard_Works and Org_Helios_Supply have roles as `ManufacturerRole` in their respective borne roles. Org_Meridian_Freight is also labeled as a `ManufacturerRole` in the ontological definitions.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.46,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology and facts identify these organizations as :ManufacturerRole bearers, as their roles in the supply chain align with the definition of a manufacturer.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology and facts identify these organizations as :ManufacturerRole bearers, as their roles in the supply chain align with the definition of a manufacturer.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.53,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology and facts identify :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight as organizations whose borne role qualifies as :ManufacturerRole.",
+                  "raw": "```json\n{\n  \"matches\": [\n    \"Org_Vanguard_Works\",\n    \"Org_Helios_Supply\",\n    \"Org_Meridian_Freight\"\n  ],\n  \"reason\": \"The provided ontology and facts identify :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight as organizations whose borne role qualifies as :ManufacturerRole.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.5,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) qualify as ProductionBatch based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) qualify as ProductionBatch based on the provided ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.48,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "The provided ontology identifies :ProductionBatch as a class that refers to a production batch of chemical items grouped together under one batch ID, which aligns with the facts provided.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"The provided ontology identifies :ProductionBatch as a class that refers to a production batch of chemical items grouped together under one batch ID, which aligns with the facts provided.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.48,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 qualify as ProductionBatch in the provided ontology.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials :Lot_FX204, :Unit_FX204_A, and :Batch_Lab09 qualify as ProductionBatch in the provided ontology.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.52,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatches based on their definitions in the ontology and the provided consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatches based on their definitions in the ontology and the provided consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.5,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) qualify as ProductionBatch based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) qualify as ProductionBatch based on the provided ontology and consignment facts.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.46,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.48,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` refer to `SpectroscopyDatum` in the ontology, as they are defined as such in the provided facts.",
+                  "raw": "```json\n{\n  \"matches\": [\n    \"Record_88A\",\n    \"Record_44B\"\n  ],\n  \"reason\": \"Both `Record_88A` and `Record_44B` refer to `SpectroscopyDatum` in the ontology, as they are defined as such in the provided facts.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.51,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` refer to `SpectroscopyDatum` in the provided ontology, as they are defined as `:SpectroscopyDatum` in the ontology and are explicitly listed as such in the facts.",
+                  "raw": "```json\n{\"matches\": [\"Record_88A\", \"Record_44B\"], \"reason\": \"Both `Record_88A` and `Record_44B` refer to `SpectroscopyDatum` in the provided ontology, as they are defined as `:SpectroscopyDatum` in the ontology and are explicitly listed as such in the facts.\"}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.5,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both records, :Record_88A and :Record_44B, refer to spectroscopy data (SpectroscopyDatum) as defined in the ontology, and their labels are 'SpectroscopyDatum' in the given ontological definitions.",
+                  "raw": "```json\n{\"matches\": [\"Record_88A\", \"Record_44B\"], \"reason\": \"Both records, :Record_88A and :Record_44B, refer to spectroscopy data (SpectroscopyDatum) as defined in the ontology, and their labels are 'SpectroscopyDatum' in the given ontological definitions.\"}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.54,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `:Record_88A` and `:Record_44B` are inspection records (IAO:ICE) and qualify as `:SpectroscopyDatum` because they contain technical data describing the chemical composition of an inspected batch, such as a spectroscopy datum.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `:Record_88A` and `:Record_44B` are inspection records (IAO:ICE) and qualify as `:SpectroscopyDatum` because they contain technical data describing the chemical composition of an inspected batch, such as a spectroscopy datum.\"\n}\n```"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        },
+        "2B_strict_defs_only": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.55,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies these organizations as :ManufacturerRole bearers: Org_Vanguard_Works (ManufacturerRole), Org_Helios_Supply (ManufacturerRole), and Org_Meridian_Freight (ManufacturerRole).",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology identifies these organizations as :ManufacturerRole bearers: Org_Vanguard_Works (ManufacturerRole), Org_Helios_Supply (ManufacturerRole), and Org_Meridian_Freight (ManufacturerRole).\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.5,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided knowledge identifies these organizations as having roles that qualify as ManufacturerRole in the ontology, as their roles are explicitly labeled as such in the ontological definitions.",
+                  "raw": "```json\n{\"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"], \"reason\": \"The provided knowledge identifies these organizations as having roles that qualify as ManufacturerRole in the ontology, as their roles are explicitly labeled as such in the ontological definitions.\"}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.52,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies :Org_Vanguard_Works and :Org_Helios_Supply as organizations whose borne roles qualify as ManufacturerRole strictly based on the given facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology identifies :Org_Vanguard_Works and :Org_Helios_Supply as organizations whose borne roles qualify as ManufacturerRole strictly based on the given facts.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.57,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies :ManufacturerRole as a qualified borne role, and the given entities (Org_Vanguard_Works, Org_Helios_Supply, Org_Meridian_Freight) are explicitly described as :ManufacturerRole.",
+                  "raw": "```json\n{\n  \"matches\": [\n    \"Org_Vanguard_Works\",\n    \"Org_Helios_Supply\",\n    \"Org_Meridian_Freight\"\n  ],\n  \"reason\": \"The provided ontology identifies :ManufacturerRole as a qualified borne role, and the given entities (Org_Vanguard_Works, Org_Helios_Supply, Org_Meridian_Freight) are explicitly described as :ManufacturerRole.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.54,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies these organizations as potential `:ManufacturerRole` bearers: Org_Vanguard_Works and their respective roles align with the definition of a manufacturer in chemical production or supply chain context.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology identifies these organizations as potential `:ManufacturerRole` bearers: Org_Vanguard_Works and their respective roles align with the definition of a manufacturer in chemical production or supply chain context.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.54,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials listed in the list (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as ProductionBatches in the provided ontology.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials listed in the list (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as ProductionBatches in the provided ontology.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.54,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All three inspected materials (Lot_FX204, Unit_FX204_A, and Batch_Lab09) qualify as ProductionBatches based on the ontology definitions and the provided facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All three inspected materials (Lot_FX204, Unit_FX204_A, and Batch_Lab09) qualify as ProductionBatches based on the ontology definitions and the provided facts.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.54,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials listed in the list (Lot_FX204, Unit_FX204_A, Batch_Lab09) are specifically labeled as ProductionBatches according to the ontology and provided facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials listed in the list (Lot_FX204, Unit_FX204_A, Batch_Lab09) are specifically labeled as ProductionBatches according to the ontology and provided facts.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.59,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All three inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are defined as ProductionBatch in the provided ontology, as they are explicitly labeled as such in the ontological definitions and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All three inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are defined as ProductionBatch in the provided ontology, as they are explicitly labeled as such in the ontological definitions and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.57,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials listed in the provided ontology (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as ProductionBatches in the context of the ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials listed in the provided ontology (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as ProductionBatches in the context of the ontology and consignment facts.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.47,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.55,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records (IAO:ICE) that qualify as `SpectroscopyDatum` as they are associated with spectroscopy assays (Raman Assay) and contain forensic specimens.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records (IAO:ICE) that qualify as `SpectroscopyDatum` as they are associated with spectroscopy assays (Raman Assay) and contain forensic specimens.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.49,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` as they contain spectroscopic data for analysis.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` as they contain spectroscopic data for analysis.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.48,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\"matches\": [\"Record_88A\", \"Record_44B\"], \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.\"}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.47,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` strictly based on the provided ontology and consignment facts.\"\n}\n```"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        },
+        "3_reasoner_plus_strict": {
+          "cqs": {
+            "CQ1": {
+              "question": "List every `:Organization` (`:Org_Helios_Supply`, `:Org_Vanguard_Works`, `:Org_Meridian_Freight`) whose borne role qualifies as `:ManufacturerRole` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Org_Vanguard_Works"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.76,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies these organizations as :ManufacturerRole bearers: Org_Vanguard_Works (Role_V1), Org_Helios_Supply (Role_H1), and Org_Meridian_Freight (Role_M1).",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The provided ontology identifies these organizations as :ManufacturerRole bearers: Org_Vanguard_Works (Role_V1), Org_Helios_Supply (Role_H1), and Org_Meridian_Freight (Role_M1).\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.77,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The :Organization entities are identified as :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight, as their roles are explicitly labeled as :ManufacturerRole in the provided ontological definitions and facts.",
+                  "raw": "```json\n{\"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"], \"reason\": \"The :Organization entities are identified as :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight, as their roles are explicitly labeled as :ManufacturerRole in the provided ontological definitions and facts.\"}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.73,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The :Organization entities are identified as :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight, whose borne roles qualify as :ManufacturerRole.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The :Organization entities are identified as :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight, whose borne roles qualify as :ManufacturerRole.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.8,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The provided ontology identifies :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight as entities whose roles qualify as :ManufacturerRole based on the ontological definitions and facts.",
+                  "raw": "```json\n{\n  \"matches\": [\n    \"Org_Vanguard_Works\",\n    \"Org_Helios_Supply\",\n    \"Org_Meridian_Freight\"\n  ],\n  \"reason\": \"The provided ontology identifies :Org_Vanguard_Works, :Org_Helios_Supply, and :Org_Meridian_Freight as entities whose roles qualify as :ManufacturerRole based on the ontological definitions and facts.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.67,
+                  "matches": [
+                    "Org_Vanguard_Works",
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "expected": [
+                    "Org_Vanguard_Works"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Org_Helios_Supply",
+                    "Org_Meridian_Freight"
+                  ],
+                  "reason": "The given ontology identifies that these organizations bear roles that qualify as 'ManufacturerRole' in the context of the ontological definitions and facts provided.",
+                  "raw": "```json\n{\n  \"matches\": [\"Org_Vanguard_Works\", \"Org_Helios_Supply\", \"Org_Meridian_Freight\"],\n  \"reason\": \"The given ontology identifies that these organizations bear roles that qualify as 'ManufacturerRole' in the context of the ontological definitions and facts provided.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ2": {
+              "question": "List every inspected material (`:Lot_FX204`, `:Unit_FX204_A`, `:Batch_Lab09`) that qualifies as `:ProductionBatch` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Lot_FX204"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.79,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "The provided ontology identifies :ProductionBatch as a class of inspected materials, and all three entities (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as such in the ontological definitions.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"The provided ontology identifies :ProductionBatch as a class of inspected materials, and all three entities (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly defined as such in the ontological definitions.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.72,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "The provided ontology identifies `:ProductionBatch` as a class of inspected materials that are formed as homogeneous portions of chemical substances produced as the output of a single chemical synthesis process.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"The provided ontology identifies `:ProductionBatch` as a class of inspected materials that are formed as homogeneous portions of chemical substances produced as the output of a single chemical synthesis process.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.76,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All inspected materials listed (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly classified as ProductionBatch in the ontology, as they are defined as such in the provided definitions and facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All inspected materials listed (Lot_FX204, Unit_FX204_A, Batch_Lab09) are explicitly classified as ProductionBatch in the ontology, as they are defined as such in the provided definitions and facts.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.74,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All three entities (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatch in the ontology based on their definitions and the provided facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All three entities (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatch in the ontology based on their definitions and the provided facts.\"\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.71,
+                  "matches": [
+                    "Lot_FX204",
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "expected": [
+                    "Lot_FX204"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Unit_FX204_A",
+                    "Batch_Lab09"
+                  ],
+                  "reason": "All three inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatch in the provided ontology and facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Lot_FX204\", \"Unit_FX204_A\", \"Batch_Lab09\"],\n  \"reason\": \"All three inspected materials (Lot_FX204, Unit_FX204_A, Batch_Lab09) are classified as ProductionBatch in the provided ontology and facts.\"\n}\n```"
+                }
+              ]
+            },
+            "CQ3": {
+              "question": "List every inspection record (`:Record_88A`, `:Record_44B`) that qualifies as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+              "expected": [
+                "Record_44B"
+              ],
+              "exact_count": 0,
+              "runs_count": 5,
+              "accuracy_pct": 0.0,
+              "runs": [
+                {
+                  "run": 1,
+                  "temp": 0.0,
+                  "latency_s": 0.64,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "PARSE_FALLBACK: ```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"The inspection records :Record_88A and :Record_44B are classified as :Spec",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"The inspection records :Record_88A and :Record_44B are classified as :SpectroscopyDatum\" based on the provided ontology and facts.\"\n}\n```"
+                },
+                {
+                  "run": 2,
+                  "temp": 0.5,
+                  "latency_s": 0.67,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` based on the provided ontology and facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"Both `Record_88A` and `Record_44B` are inspection records that qualify as `SpectroscopyDatum` based on the provided ontology and facts.\"\n}\n```"
+                },
+                {
+                  "run": 3,
+                  "temp": 0.5,
+                  "latency_s": 0.64,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "PARSE_FALLBACK: ```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"The inspection records :Record_88A and :Record_44B are classified as :Spec",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"The inspection records :Record_88A and :Record_44B are classified as :SpectroscopyDatum\" based on the provided ontology and facts.\"\n}\n```"
+                },
+                {
+                  "run": 4,
+                  "temp": 0.5,
+                  "latency_s": 0.69,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "PARSE_FALLBACK: ```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"The inspection records :Record_88A and :Record_44B are identified as :Spec",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"The inspection records :Record_88A and :Record_44B are identified as :SpectroscopyDatum\" based on the ontology definitions and the provided facts about Raman spectroscopy assays.\n}\n```"
+                },
+                {
+                  "run": 5,
+                  "temp": 0.5,
+                  "latency_s": 0.68,
+                  "matches": [
+                    "Record_88A",
+                    "Record_44B"
+                  ],
+                  "expected": [
+                    "Record_44B"
+                  ],
+                  "exact_match": false,
+                  "false_positives": [
+                    "Record_88A"
+                  ],
+                  "reason": "The inspection records `Record_88A` and `Record_44B` qualify as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.",
+                  "raw": "```json\n{\n  \"matches\": [\"Record_88A\", \"Record_44B\"],\n  \"reason\": \"The inspection records `Record_88A` and `Record_44B` qualify as `:SpectroscopyDatum` strictly based on the provided ontology and consignment facts.\"\n}\n```"
+                }
+              ]
+            }
+          },
+          "total_exact": 0,
+          "total_runs": 15,
+          "accuracy_pct": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+@prefix : <http://leurn.co/ontologies/precursor-triage#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/01-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://leurn.co/ontologies/precursor-triage> a owl:Ontology ;
+    rdfs:label "Dual-Use Chemical Precursor & Cold-Chain Inspection Ontology" .
+
+obo:IAO_0000115 a owl:AnnotationProperty ;
+    rdfs:label "definition" .
+
+### =========================================================
+### BFO 2020 (ISO/IEC 21838-2) & IAO Upper Anchor Hierarchy
+### =========================================================
+
+obo:BFO_0000001 a owl:Class ; rdfs:label "entity" .
+obo:BFO_0000002 a owl:Class ; rdfs:label "continuant" ; rdfs:subClassOf obo:BFO_0000001 .
+obo:BFO_0000003 a owl:Class ; rdfs:label "occurrent" ; rdfs:subClassOf obo:BFO_0000001 .
+obo:BFO_0000004 a owl:Class ; rdfs:label "independent continuant" ; rdfs:subClassOf obo:BFO_0000002 .
+obo:BFO_0000040 a owl:Class ; rdfs:label "material entity" ; rdfs:subClassOf obo:BFO_0000004 .
+obo:BFO_0000020 a owl:Class ; rdfs:label "specifically dependent continuant" ; rdfs:subClassOf obo:BFO_0000002 .
+obo:BFO_0000017 a owl:Class ; rdfs:label "realizable entity" ; rdfs:subClassOf obo:BFO_0000020 .
+obo:BFO_0000023 a owl:Class ; rdfs:label "role" ; rdfs:subClassOf obo:BFO_0000017 .
+obo:BFO_0000031 a owl:Class ; rdfs:label "generically dependent continuant" ; rdfs:subClassOf obo:BFO_0000002 .
+obo:IAO_0000030 a owl:Class ; rdfs:label "information content entity" ; rdfs:subClassOf obo:BFO_0000031 .
+obo:BFO_0000015 a owl:Class ; rdfs:label "process" ; rdfs:subClassOf obo:BFO_0000003 .
+
+### =========================================================
+### Supporting Domain Classes & BFO-Grounded Processes
+### =========================================================
+
+:Organization a owl:Class ;
+    rdfs:label "Organization" ;
+    rdfs:subClassOf obo:BFO_0000040 .
+
+:ChemicalSynthesis a owl:Class ;
+    rdfs:label "Chemical Synthesis" ;
+    rdfs:subClassOf obo:BFO_0000015 .
+
+:TitleTransfer a owl:Class ;
+    rdfs:label "Title Transfer" ;
+    rdfs:subClassOf obo:BFO_0000015 .
+
+:CargoTransport a owl:Class ;
+    rdfs:label "Cargo Transport" ;
+    rdfs:subClassOf obo:BFO_0000015 .
+
+:RamanAssay a owl:Class ;
+    rdfs:label "Raman Assay" ;
+    rdfs:subClassOf obo:BFO_0000015 .
+
+### =========================================================
+### Object Properties
+### =========================================================
+
+:bearsRole a owl:ObjectProperty ; rdfs:label "bears role" ; rdfs:domain :Organization ; rdfs:range :SupplyChainRole .
+:realizedIn a owl:ObjectProperty ; rdfs:label "realized in" ; rdfs:domain :SupplyChainRole ; rdfs:range obo:BFO_0000015 .
+:outputOf a owl:ObjectProperty ; rdfs:label "output of" ; rdfs:range obo:BFO_0000015 .
+:sampledFrom a owl:ObjectProperty ; rdfs:label "sampled from" ; rdfs:domain :InspectedMaterial ; rdfs:range :InspectedMaterial .
+:groupsSpecimen a owl:ObjectProperty ; rdfs:label "groups specimen" ; rdfs:domain :InspectedMaterial ; rdfs:range :InspectedMaterial .
+:submittedBy a owl:ObjectProperty ; rdfs:label "submitted by" ; rdfs:domain :InspectionRecord ; rdfs:range :Organization .
+
+### =========================================================
+### Sibling Triad 1: Supply Chain Roles (bfo:Role)
+### =========================================================
+
+:SupplyChainRole a owl:Class ;
+    rdfs:label "Supply Chain Role" ;
+    rdfs:subClassOf obo:BFO_0000023 ;
+    obo:IAO_0000115 "The part played by a company involved in chemical logistics or trade." .
+
+:ManufacturerRole a owl:Class ;
+    rdfs:label "Manufacturer Role" ;
+    rdfs:subClassOf :SupplyChainRole ;
+    obo:IAO_0000115 "A supply chain role of an organization that provides, sources, or supplies chemical materials into the supply chain (e.g., factories or wholesale vendors)." .
+
+:BrokerRole a owl:Class ;
+    rdfs:label "Broker Role" ;
+    rdfs:subClassOf :SupplyChainRole ;
+    obo:IAO_0000115 "A commercial role involved in arranging chemical deals and supplying shipments to buyers." .
+
+:CarrierRole a owl:Class ;
+    rdfs:label "Carrier Role" ;
+    rdfs:subClassOf :SupplyChainRole ;
+    obo:IAO_0000115 "Typically a logistics company or shipper handling chemical drums in transit." .
+
+### =========================================================
+### Sibling Triad 2: Inspected Materials (bfo:MaterialEntity)
+### =========================================================
+
+:InspectedMaterial a owl:Class ;
+    rdfs:label "Inspected Material" ;
+    rdfs:subClassOf obo:BFO_0000040 ;
+    obo:IAO_0000115 "Any material or chemical stuff looked at during customs inspection." .
+
+:ProductionBatch a owl:Class ;
+    rdfs:label "Production Batch" ;
+    rdfs:subClassOf :InspectedMaterial ;
+    obo:IAO_0000115 "A production batch of chemical items grouped together under one batch ID in manufacturing or laboratory operations (e.g., synthesis lots or assay trays)." .
+
+:ForensicSpecimen a owl:Class ;
+    rdfs:label "Forensic Specimen" ;
+    rdfs:subClassOf :InspectedMaterial ;
+    obo:IAO_0000115 "A chemical sample tested during an investigation." .
+
+:AssayRunTray a owl:Class ;
+    rdfs:label "Assay Run Tray" ;
+    rdfs:subClassOf :InspectedMaterial ;
+    obo:IAO_0000115 "Typically a laboratory run batch of 24 vials processed together in an instrument." .
+
+### =========================================================
+### Sibling Triad 3: Inspection Records (IAO:ICE)
+### =========================================================
+
+:InspectionRecord a owl:Class ;
+    rdfs:label "Inspection Record" ;
+    rdfs:subClassOf obo:IAO_0000030 ;
+    obo:IAO_0000115 "A report, sheet, or file recorded during cargo inspection." .
+
+:ShippingManifest a owl:Class ;
+    rdfs:label "Shipping Manifest" ;
+    rdfs:subClassOf :InspectionRecord ;
+    obo:IAO_0000115 "A document or record stating the chemical identity, purity, and origin of a batch (e.g., customs declaration or test certificate)." .
+
+:SpectroscopyDatum a owl:Class ;
+    rdfs:label "Spectroscopy Datum" ;
+    rdfs:subClassOf :InspectionRecord ;
+    obo:IAO_0000115 "Technical data describing the chemical composition of an inspected batch." .
+
+:QuarantineDirective a owl:Class ;
+    rdfs:label "Quarantine Directive" ;
+    rdfs:subClassOf :InspectionRecord ;
+    obo:IAO_0000115 "An order to stop cargo movement." .
+
+### =========================================================
+### ABox Evidence: Consignment FX-204 (Unclassified Entities)
+### =========================================================
+
+:Act_404 a owl:NamedIndividual , :ChemicalSynthesis ; rdfs:label "Activity 404 (Reactor Synthesis)" .
+:Act_901 a owl:NamedIndividual , :TitleTransfer ; rdfs:label "Activity 901 (Brokered Invoice)" .
+:Act_550 a owl:NamedIndividual , :CargoTransport ; rdfs:label "Activity 550 (Container Transit)" .
+:Assay_77 a owl:NamedIndividual , :RamanAssay ; rdfs:label "Assay 77 (Port Raman Scan)" .
+
+:Role_H1 a owl:NamedIndividual , :SupplyChainRole ;
+    rdfs:label "Role H1" ;
+    :realizedIn :Act_901 .
+
+:Role_V1 a owl:NamedIndividual , :SupplyChainRole ;
+    rdfs:label "Role V1" ;
+    :realizedIn :Act_404 .
+
+:Role_M1 a owl:NamedIndividual , :SupplyChainRole ;
+    rdfs:label "Role M1" ;
+    :realizedIn :Act_550 .
+
+:Org_Helios_Supply a owl:NamedIndividual , :Organization ;
+    rdfs:label "Helios Chemical Supply Ltd" ;
+    :bearsRole :Role_H1 .
+
+:Org_Vanguard_Works a owl:NamedIndividual , :Organization ;
+    rdfs:label "Vanguard Precision Works" ;
+    :bearsRole :Role_V1 .
+
+:Org_Meridian_Freight a owl:NamedIndividual , :Organization ;
+    rdfs:label "Meridian Freight Lines" ;
+    :bearsRole :Role_M1 .
+
+:Lot_FX204 a owl:NamedIndividual , :InspectedMaterial ;
+    rdfs:label "Consignment FX-204 Drums" ;
+    :outputOf :Act_404 .
+
+:Unit_FX204_A a owl:NamedIndividual , :InspectedMaterial ;
+    rdfs:label "Vial FX-204-A" ;
+    :sampledFrom :Lot_FX204 .
+
+:Batch_Lab09 a owl:NamedIndividual , :InspectedMaterial ;
+    rdfs:label "Batch Lab-09" ;
+    :groupsSpecimen :Unit_FX204_A .
+
+:Record_88A a owl:NamedIndividual , :InspectionRecord ;
+    rdfs:label "Inspection Record 88A" ;
+    :submittedBy :Org_Helios_Supply ;
+    rdfs:comment "Reported composition: 99.4% industrial glycol; origin: Helios Supply" .
+
+:Record_44B a owl:NamedIndividual , :InspectionRecord ;
+    rdfs:label "Inspection Record 44B" ;
+    :outputOf :Assay_77 ;
+    rdfs:comment "Measured peak composition: restricted organophosphorus precursor" .

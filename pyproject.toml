@@ -1,0 +1,17 @@
+[project]
+name = "bfo-definitions-llm-experiment"
+version = "0.1.0"
+description = "Reproducible diagnostic experiment comparing BFO 2020/IAO Aristotelian definitions, casual definitions, and OWL 2 RL axioms across symbolic reasoners and LLMs."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Clément Dhollande" }]
+requires-python = ">=3.10"
+dependencies = [
+    "rdflib>=7.0.0",
+    "owlrl>=6.0.2",
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
